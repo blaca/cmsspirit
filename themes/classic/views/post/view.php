@@ -2,64 +2,59 @@
 /* @var $this PostController */
 /* @var $model Post */
 
-$this->breadcrumbs=array(
+/* $this->breadcrumbs=array(
 	'Posts'=>array('index'),
 	$model->title,
-);
+); */
 
-$this->menu=array(
-	array('label'=>'List Post', 'url'=>array('index')),
-	array('label'=>'Create Post', 'url'=>array('create')),
-	array('label'=>'Update Post', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Post', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Post', 'url'=>array('admin')),
-);
 ?>
 
-<h1>View Post #<?php echo $model->id; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'user_id',
-		'nickname',
-		'author',
-		'title',
-		'title_second',
-		'title_alias',
-		'title_style',
-		'title_style_serialize',
-		'html_path',
-		'html_file',
-		'template',
-		'catalog_id',
-		'special_id',
-		'intro',
-		'image_list',
-		'seo_title',
-		'seo_description',
-		'seo_keywords',
-		'content',
-		'copy_from',
-		'copy_url',
-		'redirect_url',
-		'tags',
-		'view_count',
-		'commend',
-		'attach_status',
-		'attach_file',
-		'attach_thumb',
-		'favorite_count',
-		'attention_count',
-		'top_line',
-		'last_update_time',
-		'reply_count',
-		'reply_allow',
-		'sort_desc',
-		'acl',
-		'status_is',
-		'create_time',
-		'update_time',
-	),
-)); ?>
+<div class="mainWrap">
+	<div class="topDesc">
+	  <div class="desc">
+	  </div>
+	</div>
+	<div class="global clear">
+		<div class="mainBox">
+			<div class="postWrap">
+				<h1 class="title"><?php echo $model->title?></h1>
+				<p class="info"> <?php echo $model->create_time?>
+				<span class="split">|</span> Post: admin<span class="split">|</span> Viewed: <em id="_viewnum"><?php echo $model->view_count?></em></p>
+      		</div>
+      		
+      		<div class="cdata clear">
+	        <table cellpadding="0" cellspacing="0" class="showTb">
+	          <tbody>
+	            <tr>
+	              <td id="postContent"><?php echo $model->content?></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	        </div>
+	        
+	        <!--Tags-->
+	        <?php if($model->tags):?>
+	        <?php 
+	  			$tags = @explode(',', $model->tags);
+	  		?>
+	  		<div class="postTags clear">
+	        <p class="tagsTitle floatL">Tags:</p>
+	        <ul class="tagsList clear">
+	          <?php foreach($tags as $tag):?>
+	          <li><a href="<?php echo $this->createUrl('tag/post',array('name'=>urlencode($tag))) ?>" target="_blank" title="<?php echo $tag?>"><?php echo $tag?></a></li>
+	          <?php endforeach?>
+	        </ul>
+	      	</div>
+	      	<?php endif?>
+	  		<!--/Tags-->
+	  		
+	  		<!-- Next Post -->
+		    <div class="preNext clear" > <em class="floatL">Previous:
+			
+		    </div>
+	  		
+	  		<!-- /Next Post -->
+		</div>
+	</div>
+</div>

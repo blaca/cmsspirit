@@ -44,7 +44,7 @@ class PostController extends Controller
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
-			array('deny',  // deny all users
+			array('allow',  // deny all users
 				'users'=>array('*'),
 			),
 		);
@@ -137,6 +137,16 @@ class PostController extends Controller
 		);
 		
 		$this->render('index', $dataProvider);
+	}
+	
+	/*
+	 * Show the selected post.
+	 */
+	public function actionShow( $id )
+	{
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
 	}
 
 	/**
