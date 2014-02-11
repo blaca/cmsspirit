@@ -10,6 +10,7 @@ class LoginForm extends CFormModel
 	public $username;
 	public $password;
 	public $rememberMe;
+	public $verifyCode;
 
 	private $_identity;
 
@@ -23,6 +24,8 @@ class LoginForm extends CFormModel
 		return array(
 			// username and password are required
 			array('username, password', 'required'),
+			// the captcha
+			array('verifyCode', 'captcha', 'allowEmpty'=>!extension_loaded('gd')),
 			// rememberMe needs to be a boolean
 			array('rememberMe', 'boolean'),
 			// password needs to be authenticated
@@ -49,8 +52,20 @@ class LoginForm extends CFormModel
 		if(!$this->hasErrors())
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);
-			if(!$this->_identity->authenticate())
-				$this->addError('password','Incorrect username or password.');
+			$this->_identity->authenticate();
+			switch ($_identity) 
+			{
+				case UserIdentity::ERROR_NONE:
+					$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
+					Yii::app()->user->login($identity,$duration);
+					break;
+				case UserIdentity::ERROR_USERNAME_INVALID:
+					$this->addError('username','User does not exist.');
+					break;
+				default: // UserIdentity::ERROR_PASSWORD_INVALID
+					$this->addError('password','Password dismatch.');
+					break;
+			}
 		}
 	}
 

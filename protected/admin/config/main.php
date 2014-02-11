@@ -57,7 +57,7 @@ return array(
 			// In debug mode every user (even guest) can admin srbac, also
 			//if you use internationalization untranslated words/phrases
 			//will be marked with a red star
-			"debug"=>false,
+			"debug"=>true,
 			// The number of items shown in each page (default:15)
 			"pageSize"=>16,
 			// The name of the super user
@@ -120,8 +120,7 @@ return array(
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'admin',
-			'charset' => 'utf8',
-			
+			'charset' => 'utf8',			
 			'tablePrefix' => 'SP_',
 		),
 		'errorHandler'=>array(
@@ -142,6 +141,19 @@ return array(
 				),
 				*/
 			),
+		),
+		// rbac
+		'authManager'=>array(
+				// The type of Manager (Database)
+				'class'=>'CDbAuthManager',
+				// The database connection used
+				'connectionID'=>'db',
+				// The itemTable name (default:authitem)
+				'itemTable'=>'AuthItem',
+				// The assignmentTable name (default:authassignment)
+				'assignmentTable'=>'AuthAssignment',
+				// The itemChildTable name (default:authitemchild)
+				'itemChildTable'=>'AuthItemChild',
 		),
 	),
 

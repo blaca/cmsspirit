@@ -294,3 +294,546 @@ Stack trace:
 #14 {main}
 REQUEST_URI=/cmsspirit/admin.php
 ---
+2014/02/11 23:17:05 [error] [exception.CException] exception 'CException' with message 'UserLogin cannot find the view "userLogin".' in C:\wamp\www\cmsspirit\framework\web\widgets\CWidget.php:246
+Stack trace:
+#0 C:\wamp\www\cmsspirit\protected\components\UserLogin.php(16): CWidget->render('userLogin', Array)
+#1 C:\wamp\www\cmsspirit\protected\components\Portlet.php(33): UserLogin->renderContent()
+#2 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(173): Portlet->run()
+#3 C:\wamp\www\cmsspirit\protected\admin\views\site\login.php(4): CBaseController->widget('UserLogin', Array)
+#4 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#5 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#6 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#7 C:\wamp\www\cmsspirit\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#8 C:\wamp\www\cmsspirit\protected\admin\controllers\SiteController.php(29): CController->render('login', Array)
+#9 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#10 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('')
+#14 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#17 {main}
+REQUEST_URI=/cmsspirit/admin.php
+---
+2014/02/11 23:17:55 [error] [exception.CException] exception 'CException' with message 'LoginForm has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in C:\wamp\www\cmsspirit\framework\base\CModel.php:289
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\base\CModel.php(260): CModel->createValidators()
+#1 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(2236): CModel->getValidators('verifyCode')
+#2 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(LoginForm), 'verifyCode', Array)
+#3 C:\wamp\www\cmsspirit\protected\components\views\userLogin.php(15): CHtml::activeTextField(Object(LoginForm), 'verifyCode', Array)
+#4 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(130): require('C:\wamp\www\cms...')
+#5 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, false)
+#6 C:\wamp\www\cmsspirit\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\wamp\www\cms...', Array, false)
+#7 C:\wamp\www\cmsspirit\protected\components\UserLogin.php(16): CWidget->render('userLogin', Array)
+#8 C:\wamp\www\cmsspirit\protected\components\Portlet.php(33): UserLogin->renderContent()
+#9 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(173): Portlet->run()
+#10 C:\wamp\www\cmsspirit\protected\admin\views\site\login.php(4): CBaseController->widget('UserLogin', Array)
+#11 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#12 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#13 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#14 C:\wamp\www\cmsspirit\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#15 C:\wamp\www\cmsspirit\protected\admin\controllers\SiteController.php(29): CController->render('login', Array)
+#16 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#17 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#19 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('')
+#21 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#22 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#24 {main}
+REQUEST_URI=/cmsspirit/admin.php
+---
+2014/02/11 23:31:02 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cmsspirit.authassignment' doesn't exist. The SQL statement executed was: SELECT *
+FROM `AuthAssignment`
+WHERE userid=:userid.
+2014/02/11 23:31:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cmsspirit.authassignment' doesn't exist. The SQL statement executed was: SELECT *
+FROM `AuthAssignment`
+WHERE userid=:userid' in C:\wamp\www\cmsspirit\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\www\cmsspirit\framework\web\auth\CDbAuthManager.php(337): CDbCommand->queryAll()
+#2 C:\wamp\www\cmsspirit\framework\web\auth\CDbAuthManager.php(74): CDbAuthManager->getAuthAssignments(NULL)
+#3 C:\wamp\www\cmsspirit\framework\web\auth\CWebUser.php(815): CDbAuthManager->checkAccess('????????????', NULL, Array)
+#4 C:\wamp\www\cmsspirit\protected\admin\views\layouts\main.php(55): CWebUser->checkAccess('????????????')
+#5 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#6 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#7 C:\wamp\www\cmsspirit\framework\web\CController.php(784): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#8 C:\wamp\www\cmsspirit\protected\admin\controllers\SiteController.php(29): CController->render('login', Array)
+#9 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#10 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('')
+#14 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#15 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#17 {main}
+REQUEST_URI=/cmsspirit/admin.php
+---
+2014/02/12 00:10:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa4b7d1026c
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:10:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&refresh=1&_=1392135042021
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:11:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa4bbe85855
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:11:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&refresh=1&_=1392135107071
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:11:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&refresh=1&_=1392135111570
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:12:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa4bef146dd
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:16:17 [error] [exception.CException] exception 'CException' with message 'CCaptchaValidator.action "captcha" is invalid. Unable to find such an action in the current controller.' in C:\wamp\www\cmsspirit\framework\validators\CCaptchaValidator.php:77
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\validators\CCaptchaValidator.php(49): CCaptchaValidator->getCaptchaAction()
+#1 C:\wamp\www\cmsspirit\framework\validators\CValidator.php(213): CCaptchaValidator->validateAttribute(Object(LoginForm), 'verifyCode')
+#2 C:\wamp\www\cmsspirit\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#3 C:\wamp\www\cmsspirit\protected\admin\controllers\SiteController.php(25): CModel->validate()
+#4 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#5 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#10 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#12 {main}
+REQUEST_URI=/cmsspirit/admin.php
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:16:54 [error] [exception.CException] exception 'CException' with message 'CCaptchaValidator.action "captcha" is invalid. Unable to find such an action in the current controller.' in C:\wamp\www\cmsspirit\framework\validators\CCaptchaValidator.php:77
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\validators\CCaptchaValidator.php(49): CCaptchaValidator->getCaptchaAction()
+#1 C:\wamp\www\cmsspirit\framework\validators\CValidator.php(213): CCaptchaValidator->validateAttribute(Object(LoginForm), 'verifyCode')
+#2 C:\wamp\www\cmsspirit\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#3 C:\wamp\www\cmsspirit\protected\admin\controllers\SiteController.php(25): CModel->validate()
+#4 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#5 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#10 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#12 {main}
+REQUEST_URI=/cmsspirit/admin.php
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:19:57 [error] [exception.CException] exception 'CException' with message 'CCaptchaValidator.action "captcha" is invalid. Unable to find such an action in the current controller.' in C:\wamp\www\cmsspirit\framework\validators\CCaptchaValidator.php:77
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\validators\CCaptchaValidator.php(49): CCaptchaValidator->getCaptchaAction()
+#1 C:\wamp\www\cmsspirit\framework\validators\CValidator.php(213): CCaptchaValidator->validateAttribute(Object(LoginForm), 'verifyCode')
+#2 C:\wamp\www\cmsspirit\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#3 C:\wamp\www\cmsspirit\protected\admin\controllers\SiteController.php(25): CModel->validate()
+#4 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#5 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#10 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#12 {main}
+REQUEST_URI=/cmsspirit/admin.php
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:20:58 [error] [exception.CException] exception 'CException' with message 'CCaptchaValidator.action "captcha" is invalid. Unable to find such an action in the current controller.' in C:\wamp\www\cmsspirit\framework\validators\CCaptchaValidator.php:77
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\validators\CCaptchaValidator.php(49): CCaptchaValidator->getCaptchaAction()
+#1 C:\wamp\www\cmsspirit\framework\validators\CValidator.php(213): CCaptchaValidator->validateAttribute(Object(LoginForm), 'verifyCode')
+#2 C:\wamp\www\cmsspirit\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#3 C:\wamp\www\cmsspirit\protected\admin\controllers\SiteController.php(25): CModel->validate()
+#4 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#5 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#10 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#12 {main}
+REQUEST_URI=/cmsspirit/admin.php
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:21:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa4dfe4395f
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:21:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa4dfe4395f
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:21:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&refresh=1&_=1392135682230
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:25:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa4f01939f7
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:26:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa4f1a0d32e
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:26:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "forget".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('forget')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('forget')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/forget')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/forget
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:26:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa4f1fafe02
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:27:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa4f5eba088
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:29:47 [error] [exception.CException] exception 'CException' with message 'LoginForm and its behaviors do not have a method or closure named "textField".' in C:\wamp\www\cmsspirit\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\wamp\www\cmsspirit\protected\components\views\userLogin.php(15): CComponent->__call('textField', Array)
+#1 C:\wamp\www\cmsspirit\protected\components\views\userLogin.php(15): LoginForm->textField(Object(LoginForm), 'verifyCode')
+#2 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(130): require('C:\wamp\www\cms...')
+#3 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, false)
+#4 C:\wamp\www\cmsspirit\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\wamp\www\cms...', Array, false)
+#5 C:\wamp\www\cmsspirit\protected\components\UserLogin.php(16): CWidget->render('userLogin', Array)
+#6 C:\wamp\www\cmsspirit\protected\components\Portlet.php(33): UserLogin->renderContent()
+#7 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(173): Portlet->run()
+#8 C:\wamp\www\cmsspirit\protected\admin\views\site\login.php(4): CBaseController->widget('UserLogin', Array)
+#9 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#10 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#11 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#12 C:\wamp\www\cmsspirit\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#13 C:\wamp\www\cmsspirit\protected\admin\controllers\SiteController.php(29): CController->render('login', Array)
+#14 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#15 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#20 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#22 {main}
+REQUEST_URI=/cmsspirit/admin.php
+---
+2014/02/12 00:30:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa503b43494
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:31:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa506bd53a8
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:31:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa50787c4b3
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:32:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa50b934b00
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:34:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa51106d14d
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:38:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&refresh=1&_=1392136693466
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:41:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa52cdb8a2b
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:41:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fa52d5cc47a
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/12 00:45:12 [error] [exception.CException] exception 'CException' with message 'Property "CCaptchaValidator.0" is not defined.' in C:\wamp\www\cmsspirit\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\validators\CValidator.php(189): CComponent->__set('0', false)
+#1 C:\wamp\www\cmsspirit\framework\base\CModel.php(287): CValidator::createValidator('captcha', Object(LoginForm), 'verifyCode', Array)
+#2 C:\wamp\www\cmsspirit\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(2236): CModel->getValidators('verifyCode')
+#4 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(LoginForm), 'verifyCode', Array)
+#5 C:\wamp\www\cmsspirit\protected\components\views\userLogin.php(15): CHtml::activeTextField(Object(LoginForm), 'verifyCode', Array)
+#6 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(130): require('C:\wamp\www\cms...')
+#7 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, false)
+#8 C:\wamp\www\cmsspirit\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\wamp\www\cms...', Array, false)
+#9 C:\wamp\www\cmsspirit\protected\components\UserLogin.php(16): CWidget->render('userLogin', Array)
+#10 C:\wamp\www\cmsspirit\protected\components\Portlet.php(33): UserLogin->renderContent()
+#11 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(173): Portlet->run()
+#12 C:\wamp\www\cmsspirit\protected\admin\views\site\login.php(4): CBaseController->widget('UserLogin', Array)
+#13 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#14 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#15 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#16 C:\wamp\www\cmsspirit\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#17 C:\wamp\www\cmsspirit\protected\admin\controllers\SiteController.php(40): CController->render('login', Array)
+#18 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#19 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#24 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#26 {main}
+REQUEST_URI=/cmsspirit/admin.php
+---
+2014/02/12 00:46:15 [error] [exception.CException] exception 'CException' with message 'Property "CCaptchaValidator.0" is not defined.' in C:\wamp\www\cmsspirit\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\validators\CValidator.php(189): CComponent->__set('0', false)
+#1 C:\wamp\www\cmsspirit\framework\base\CModel.php(287): CValidator::createValidator('captcha', Object(LoginForm), 'verifyCode', Array)
+#2 C:\wamp\www\cmsspirit\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(2236): CModel->getValidators('verifyCode')
+#4 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(LoginForm), 'verifyCode', Array)
+#5 C:\wamp\www\cmsspirit\protected\components\views\userLogin.php(15): CHtml::activeTextField(Object(LoginForm), 'verifyCode', Array)
+#6 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(130): require('C:\wamp\www\cms...')
+#7 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, false)
+#8 C:\wamp\www\cmsspirit\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\wamp\www\cms...', Array, false)
+#9 C:\wamp\www\cmsspirit\protected\components\UserLogin.php(16): CWidget->render('userLogin', Array)
+#10 C:\wamp\www\cmsspirit\protected\components\Portlet.php(33): UserLogin->renderContent()
+#11 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(173): Portlet->run()
+#12 C:\wamp\www\cmsspirit\protected\admin\views\site\login.php(4): CBaseController->widget('UserLogin', Array)
+#13 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#14 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#15 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#16 C:\wamp\www\cmsspirit\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#17 C:\wamp\www\cmsspirit\protected\admin\controllers\SiteController.php(44): CController->render('login', Array)
+#18 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#19 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#24 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#26 {main}
+REQUEST_URI=/cmsspirit/admin.php
+---
+2014/02/12 00:48:18 [error] [exception.CException] exception 'CException' with message 'Property "CCaptchaValidator.0" is not defined.' in C:\wamp\www\cmsspirit\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\validators\CValidator.php(189): CComponent->__set('0', false)
+#1 C:\wamp\www\cmsspirit\framework\base\CModel.php(287): CValidator::createValidator('captcha', Object(LoginForm), 'verifyCode', Array)
+#2 C:\wamp\www\cmsspirit\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(2236): CModel->getValidators('verifyCode')
+#4 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(LoginForm), 'verifyCode', Array)
+#5 C:\wamp\www\cmsspirit\protected\components\views\userLogin.php(15): CHtml::activeTextField(Object(LoginForm), 'verifyCode', Array)
+#6 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(130): require('C:\wamp\www\cms...')
+#7 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, false)
+#8 C:\wamp\www\cmsspirit\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\wamp\www\cms...', Array, false)
+#9 C:\wamp\www\cmsspirit\protected\components\UserLogin.php(16): CWidget->render('userLogin', Array)
+#10 C:\wamp\www\cmsspirit\protected\components\Portlet.php(33): UserLogin->renderContent()
+#11 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(173): Portlet->run()
+#12 C:\wamp\www\cmsspirit\protected\admin\views\site\login.php(4): CBaseController->widget('UserLogin', Array)
+#13 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#14 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#15 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#16 C:\wamp\www\cmsspirit\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#17 C:\wamp\www\cmsspirit\protected\admin\controllers\SiteController.php(44): CController->render('login', Array)
+#18 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#19 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#24 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#26 {main}
+REQUEST_URI=/cmsspirit/admin.php
+---
+2014/02/12 00:48:29 [error] [exception.CException] exception 'CException' with message 'Property "CCaptchaValidator.0" is not defined.' in C:\wamp\www\cmsspirit\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\validators\CValidator.php(189): CComponent->__set('0', false)
+#1 C:\wamp\www\cmsspirit\framework\base\CModel.php(287): CValidator::createValidator('captcha', Object(LoginForm), 'verifyCode', Array)
+#2 C:\wamp\www\cmsspirit\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(2236): CModel->getValidators('verifyCode')
+#4 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(LoginForm), 'verifyCode', Array)
+#5 C:\wamp\www\cmsspirit\protected\components\views\userLogin.php(15): CHtml::activeTextField(Object(LoginForm), 'verifyCode', Array)
+#6 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(130): require('C:\wamp\www\cms...')
+#7 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, false)
+#8 C:\wamp\www\cmsspirit\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('C:\wamp\www\cms...', Array, false)
+#9 C:\wamp\www\cmsspirit\protected\components\UserLogin.php(16): CWidget->render('userLogin', Array)
+#10 C:\wamp\www\cmsspirit\protected\components\Portlet.php(33): UserLogin->renderContent()
+#11 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(173): Portlet->run()
+#12 C:\wamp\www\cmsspirit\protected\admin\views\site\login.php(4): CBaseController->widget('UserLogin', Array)
+#13 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#14 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#15 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#16 C:\wamp\www\cmsspirit\framework\web\CController.php(782): CController->renderPartial('login', Array, true)
+#17 C:\wamp\www\cmsspirit\protected\admin\controllers\SiteController.php(44): CController->render('login', Array)
+#18 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#19 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#20 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#21 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('')
+#23 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#24 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#26 {main}
+REQUEST_URI=/cmsspirit/admin.php
+---
