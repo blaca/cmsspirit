@@ -1,28 +1,11 @@
 <?php
 
-class SiteController extends SBaseController
+class SiteController extends BaseController
 {	
 	public $defaultAction='login';
-	
+		
 	/**
-	 * (non-PHPdoc)
-	 * @see CController::actions()
-	 */
-	public function actions()
-	{
-		return array(
-			// captcha action renders the CAPTCHA image
-			'captcha'=>array(
-				'class'=>'CCaptchaAction',
-
-				'maxLength'=>'4',
-				'minLength'=>'6',
-			),
-		);
-	}
-	
-	/**
-	 * 
+	 * show the login form.
 	 */
 	public function actionLogin()
 	{
@@ -42,5 +25,19 @@ class SiteController extends SBaseController
 		}
 		// display the login form
 		$this->render('login',array('form'=>$form));
+	}
+	
+	public function actionIndex()
+	{
+		$this->render('index');
+	}
+	
+	/**
+	 * Logout the current user and redirect to homepage.
+	 */
+	public function actionLogout()
+	{
+		Yii::app()->user->logout();
+		$this->redirect(Yii::app()->homeUrl);
 	}
 }

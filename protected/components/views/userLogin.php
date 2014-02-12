@@ -35,7 +35,7 @@
 <?php echo CHtml::activeLabel($form,'rememberMe'); ?>
 <br/>
 <?php echo CHtml::submitButton('Login',array('class'=>'submit')); ?>
-	<?php echo CHtml::link('forget password',array('site/forget')); ?>
+<?php echo CHtml::link('forget password',array('site/forget')); ?>
 </div>
 
 <?php echo CHtml::endForm(); ?>

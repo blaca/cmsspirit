@@ -13,7 +13,7 @@ Yii::setPathOfAlias('backend', $backend);
 
 return array(
 	'basePath'=>$frontend,
-	'name'=>'CMS Spirit backend',
+	'name'=>'CMS Spirit',
 	'timezone'=>'Asia/Shanghai',
 		
 	'controllerPath'=>$backend.'/controllers',
