@@ -11,9 +11,8 @@ class SiteController extends BaseController
 	{
 		if(!Yii::app()->user->isGuest)
 		{
-			$this->redirect(array('website/index'));
-		}
-		
+			$this->redirect(array('index'));
+		}		
 		$form=new LoginForm;
 		// collect user input data
 		if(isset($_POST['LoginForm']))
@@ -26,7 +25,12 @@ class SiteController extends BaseController
 		// display the login form
 		$this->render('login',array('form'=>$form));
 	}
-	
+		
+	/**
+	 * Show the backend index page.
+	 * 
+	 * the view file: /Protected/views/site/index.php
+	 */
 	public function actionIndex()
 	{
 		$this->render('index');

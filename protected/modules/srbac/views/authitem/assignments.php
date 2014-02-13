@@ -15,14 +15,27 @@
  * @package srbac.views.authitem
  * @since 1.0.1
  */
- ?>
+?>
+<?php $this->breadcrumbs = array(
+    'Srbac Assignments'
+)
+?>
+<?php if($this->module->getMessage() != ""){ ?>
+<div id="srbacError">
+  <?php echo $this->module->getMessage();?>
+</div>
+<?php } ?>
+<?php if(!$id) {
+  if($this->module->getShowHeader()) {
+    $this->renderPartial($this->module->header);  }
+  ?>
 <div class="simple">
-  <?php if(!$id) { 
-      $this->renderPartial("frontpage");
+    <?php
+    $this->renderPartial("frontpage");
     ?>
-    <?php echo CHtml::beginForm(); ?>
-    <?php echo CHtml::activeDropDownList($this->module->getUserModel(),$this->module->userid,
-    Chtml::listData($this->module->getUserModel()->findAll(), $this->module->userid, $this->module->username),
+    <?php echo SHtml::beginForm(); ?>
+    <?php echo SHtml::activeDropDownList($this->module->getUserModel(),$this->module->userid,
+    SHtml::listData($this->module->getUserModel()->findAll(), $this->module->userid, $this->module->username),
     array('size'=>1,'class'=>'dropdown','ajax' => array(
     'type'=>'POST',
     'url'=>array('showAssignments'),
@@ -34,25 +47,32 @@
                       $("#assignments").removeClass("srbacLoading");
                   }'
     ),
-    'prompt'=>'select user'
+    'prompt'=>Helper::translate('srbac','select user')
     )); ?>
-    <?php echo CHTml::endForm(); ?>
-  <?php } else { ?>
-  <?php Yii::app()->clientScript->registerCssFile(Yii::app()->getModule('srbac')->css); ?>
-    <?php   Yii::app()->clientScript->registerScript(
-        "alert",
-        "$.ajax({
+    <?php echo SHtml::endForm(); ?>
+</div>
+<?php } else { ?>
+  <?php $url = Yii::app()->urlManager->createUrl("srbac/authitem/showAssignments",array("id"=>$id));?>
+  <?php Yii::import("srbac.components.Helper");?>
+  <?php Helper::publishCss(Yii::app()->getModule('srbac')->css,true);?>
+  <?php   Yii::app()->clientScript->registerScript(
+      "alert",
+      "$.ajax({
             type: 'POST',
-            url: 'index.php?r=srbac/authitem/showAssignments&id=$id',
+            url: '".$url."',
             success: function(html){
                $('#assignments').html(html);
         }
           });
-        ",
-        CClientScript::POS_READY
-    ); ?>
-  <?php } ?>
-</div>
+      ",
+      CClientScript::POS_READY
+  ); ?>
+<?php } ?>
 <div id="assignments">
 
 </div>
+<?php if(!$id) {?>
+  <?php if($this->module->getShowFooter()) {
+    $this->renderPartial($this->module->footer);
+  }?>
+<?php }?>

@@ -837,3 +837,224 @@ Stack trace:
 #26 {main}
 REQUEST_URI=/cmsspirit/admin.php
 ---
+2014/02/13 01:26:19 [error] [exception.CException] exception 'CException' with message 'CCaptchaValidator.action "captcha" is invalid. Unable to find such an action in the current controller.' in C:\wamp\www\cmsspirit\framework\validators\CCaptchaValidator.php:77
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\validators\CCaptchaValidator.php(49): CCaptchaValidator->getCaptchaAction()
+#1 C:\wamp\www\cmsspirit\framework\validators\CValidator.php(213): CCaptchaValidator->validateAttribute(Object(LoginForm), 'verifyCode')
+#2 C:\wamp\www\cmsspirit\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#3 C:\wamp\www\cmsspirit\protected\admin\controllers\SiteController.php(23): CModel->validate()
+#4 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#5 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('')
+#9 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#10 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#12 {main}
+REQUEST_URI=/cmsspirit/admin.php
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/13 01:26:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fbaed73f913
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/13 01:27:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&refresh=1&_=1392226019356
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/13 01:27:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&refresh=1&_=1392226026631
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/13 01:27:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fbaef5280f1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/13 01:27:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captcha".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('captcha')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('captcha')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/captcha')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/captcha&v=52fbaf00b0845
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/13 01:55:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index.php".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('index.php')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=index.php
+---
+2014/02/13 01:55:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('index')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=index
+---
+2014/02/13 01:55:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('index')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=index
+---
+2014/02/13 20:54:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "website/index"。' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('website/index')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=website/index
+HTTP_REFERER=http://localhost/cmsspirit/admin.php
+---
+2014/02/13 20:55:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index" 动作.' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/index
+---
+2014/02/13 20:55:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index" 动作.' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/index
+---
+2014/02/13 20:55:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index" 动作.' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/index
+---
+2014/02/13 20:55:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index" 动作.' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/index
+---
+2014/02/13 20:57:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index" 动作.' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/index
+---
+2014/02/13 20:57:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index" 动作.' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/index
+---
+2014/02/13 20:57:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index" 动作.' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/index
+---
+2014/02/13 20:58:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index" 动作.' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/index
+---
+2014/02/13 20:59:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index" 动作.' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=site/index
+---
+2014/02/13 21:28:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "website/CleanCache"。' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('website/CleanCa...')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=website/CleanCache
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=site/index
+---
+2014/02/13 21:28:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "website/index"。' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('website/index')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=website/index
+---
+2014/02/13 21:28:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "website/index"。' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('website/index')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=website/index
+---

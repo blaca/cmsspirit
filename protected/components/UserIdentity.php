@@ -38,7 +38,7 @@ class UserIdentity extends CUserIdentity
 			$user->saveAttributes($arr);
             $this->errorCode=self::ERROR_NONE;
 			//ckfinder
-			//$_SESSION['ckfinder'] == true;
+// 			$_SESSION['ckfinder'] == true;
 		}
 		return !$this->errorCode;
 	}

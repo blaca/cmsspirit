@@ -14,38 +14,61 @@
  * @since 1.0.0
  */
 ?>
-<?php $error = false; $disabled = array(); ?>
+<?php
+$script = "
+jQuery('#help_handle').click(function(){
+$('#help').toggle('1000');
+});";
+
+Yii::app()->clientScript->registerScript("cb",$script,CClientScript::POS_READY);
+?>
+<?php $error = false;
+$disabled = array(); ?>
 <h3><?php echo Helper::translate('srbac','Install Srbac')?></h3>
 <div class="srbac">
-  <?php echo CHtml::beginForm(); ?>
-  <div>
+  <div id="help_handle" class="iconBox" style="float:right">
+    <?php echo
+    SHtml::image($this->module->getIconsPath().'/help.png',
+      Helper::translate('srbac', 'Help'),
+      array('class'=>'icon',
+      'title'=>Helper::translate('srbac','Help'),
+      'border'=>0
+      ))." " .
+      ($this->module->iconText ?
+      Helper::translate('srbac','Help') :
+      "");
+    ?>
+  </div>
+  <br />
+  <?php echo SHtml::beginForm(); ?>
+  <div id="help" style="display:none">
     <?php $this->renderPartial(Yii::app()->findLocalizedFile('install/installText'))?>
   </div>
   <div>
     <?php echo Helper::translate('srbac','Your Database, AuthManager and srbac settings:'); ?>
     <table class="srbacDataGrid" width="'100%">
       <?php if(Yii::app()->authManager instanceof CDbAuthManager) { ?>
+
         <?php try { ?>
       <tr>
         <th colspan="2"><?php echo Helper::translate('srbac','Database');?></th>
       <tr>
         <td><?php echo Helper::translate('srbac','Driver');?></td>
-        <td><?php echo Yii::app()->getDb()->getDriverName()?></td>
+        <td><?php echo Yii::app()->authManager->db->getDriverName()?></td>
       </tr>
       <tr>
         <td><?php echo Helper::translate('srbac','Connection');?></td>
-        <td><?php echo Yii::app()->getDb()->connectionString?></td>
+        <td><?php echo Yii::app()->authManager->db->connectionString?></td>
       </tr>
-        <?php  } catch(CException $e) { ?>
+          <?php  } catch(CException $e) { ?>
       <tr><td colspan="2">
           <div class="error">
                 <?php echo Helper::translate('srbac','Database is not Configured');?>
+                <?php echo "<pre>" . $e->getMessage() . "</pre>"; ?>
           </div>
         </td></tr>
           <?php $error =true; ?>
-        <?php  }?>
-
-
+          <?php  }?>
         <?php try { ?>
       <tr>
         <th colspan="2"><?php echo Helper::translate('srbac','AuthManager');?></th>
@@ -61,35 +84,36 @@
         <td><?php echo Helper::translate('srbac','Item child table');?></td>
         <td><?php echo Yii::app()->authManager->itemChildTable?></td>
       </tr>
-        <?php  } catch(CException $e) { ?>
+          <?php  } catch(CException $e) { ?>
       <tr>
         <td colspan="2">
           <div class="error">
                 <?php echo Helper::translate('srbac','AuthManager is not Configured');?>
+                <?php echo "<pre>" . $e->getMessage() . "</pre>"; ?>
           </div>
         </td></tr>
           <?php $error =true; ?>
+          <?php  }?>
         <?php  }?>
-      <?php  }?>
       <?php try { ?>
       <tr>
         <th colspan="2"><?php echo Helper::translate('srbac','srbac');?></th>
       </tr>
-        <?php foreach (Helper::findModule("srbac") as $key=>$value) { ?>
-      <tr>
-        <td><?php echo $key ?></td>
-        <td><?php echo (!is_array($value)) ? $value : CVarDumper::dump($value, 1, true); ?></td>
-      </tr>
-        <?php } ?>
-      <?php  } catch(CException $e ) { ?>
+        <?php foreach ($this->module->getAttributes() as $key=>$value) { ?>
+          <?php $check = Helper::checkInstall($key,$value); ?>
+          <?php echo $check[0]; ?>
+          <?php if($check[1] == Helper::ERROR)$error = true;?>
+          <?php } ?>
+        <?php  } catch(CException $e ) { ?>
       <tr>
         <td colspan="2">
           <div class="error">
               <?php echo Helper::translate('srbac','srbac is not Configured');?>
+              <?php echo "<pre>" . $e->getMessage() . "</pre>"; ?>
           </div>
         </td></tr>
         <?php $error =true;?>
-      <?php  }?>
+        <?php  }?>
       <tr>
         <th colspan="2">Yii</th>
       </tr>
@@ -99,7 +123,7 @@
         </td>
         <?php if(Helper::checkYiiVersion(Helper::findModule("srbac")->getSupportedYiiVersion())) {?>
         <td><?php echo Yii::getVersion()?></td>
-        <?php } else {?>
+          <?php } else {?>
         <td style="color:red;font-weight:bold"><?php echo Yii::getVersion().
               "  <br /> ".
               Helper::translate("srbac","Wrong Yii version, lower required version is")." ".Helper::findModule("srbac")->getSupportedYiiVersion(); ?></td>
@@ -115,13 +139,13 @@
         <?php echo Helper::translate('srbac','There is an error in your configuration') ?>
         <?php $disabled = array('disabled'=>true)?>
     </div>
-    <?php } ?>
-    <?php echo CHtml::hiddenField("action", "Install"); ?>
-    <?php echo CHtml::checkBox("demo", true, $disabled);
+      <?php } ?>
+    <?php echo SHtml::hiddenField("action", "Install"); ?>
+    <?php echo SHtml::checkBox("demo", false, $disabled);
     echo Helper::translate('srbac','Create demo authItems?')
     ?><br />
-    <?php echo CHtml::submitButton(Helper::translate('srbac','Install'),$disabled); ?>
+    <?php echo SHtml::submitButton(Helper::translate('srbac','Install'),$disabled); ?>
   </div>
 
-  <?php echo CHtml::endForm(); ?>
+  <?php echo SHtml::endForm(); ?>
 </div>

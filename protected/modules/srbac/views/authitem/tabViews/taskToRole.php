@@ -15,14 +15,19 @@
  */
  ?>
 <!-- ROLES -> TASKS -->
+<?php
+$criteria = new CDbCriteria();
+$criteria->condition = "type=2";
+$criteria->order = "name";
+?>
 <div class="srbac">
-  <?php echo CHtml::beginForm(); ?>
-  <?php echo CHtml::errorSummary($model); ?>
-  <table>
+  <?php echo SHtml::beginForm(); ?>
+  <?php echo SHtml::errorSummary($model); ?>
+  <table width="100%">
     <tr><th colspan="2"><?php echo Helper::translate('srbac','Assign Tasks to Roles') ?></th></tr>
     <tr>
       <th width="50%">
-      <?php echo CHtml::label(Helper::translate('srbac',"Role"),'role'); ?></th>
+      <?php echo SHtml::label(Helper::translate('srbac',"Role"),'role'); ?></th>
       <td width="50%" rowspan="2">
         <div id="tasks">
           <?php
@@ -33,8 +38,8 @@
       </td>
     </tr>
     <tr valign="top">
-      <td><?php echo CHtml::activeDropDownList(AuthItem::model(),'name',
-        Chtml::listData(AuthItem::model()->findAll('type=2'), 'name', 'name'),
+      <td><?php echo SHtml::activeDropDownList(AuthItem::model(),'name[0]',
+        SHtml::listData(AuthItem::model()->findAll($criteria), 'name', 'name'),
         array('size'=>$this->module->listBoxNumberOfLines,'class'=>'dropdown','ajax' => array(
         'type'=>'POST',
         'url'=>array('getTasks'),
@@ -44,12 +49,12 @@
                   }',
         'complete' => 'function(){
                       $("#loadMessRole").removeClass("srbacLoading");
-                  }',
+                  }'
         ),
         )); ?>
       </td>
     </tr>
   </table>
   <br />
-  <?php echo CHtml::endForm(); ?>
+  <?php echo SHtml::endForm(); ?>
 </div>

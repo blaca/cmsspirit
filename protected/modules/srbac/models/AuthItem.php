@@ -27,6 +27,10 @@ class AuthItem extends CActiveRecord {
   public static $TYPES = array('Operation','Task','Role');
   public $oldName;
 
+  public function getDbConnection() {
+    return Yii::app()->authManager->db;
+  }
+
 
   /**
    * Returns the static model of the specified AR class.
@@ -43,10 +47,10 @@ class AuthItem extends CActiveRecord {
     return Yii::app()->authManager->itemTable;
   }
 
-  public function safeAttributes() {
-    parent::safeAttributes();
-    return array('name','type','description','bizrule','data');
-  }
+//  public function safeAttributes() {
+//    parent::safeAttributes();
+//    return array('name','type','description','bizrule','data');
+//  }
 
   /**
    * @return array validation rules for model attributes.
@@ -56,6 +60,7 @@ class AuthItem extends CActiveRecord {
     array('name','length','max'=>64),
     array('name, type', 'required'),
     array('type', 'numerical', 'integerOnly'=>true),
+    array('name,type,description,bizrule,data','safe'),
     );
   }
 
@@ -93,9 +98,19 @@ class AuthItem extends CActiveRecord {
 //  }
 
 
+  protected function beforeSave() {
+    $this->data = serialize($this->data);
+    return parent::beforeSave();
+  }
+
+  protected function afterFind() {
+    parent::afterFind();
+    $this->data = unserialize($this->data);
+  }
 
   protected function afterSave() {
     parent::afterSave();
+    $this->data = unserialize($this->data);
     if($this->oldName != $this->name) {
       $this->model()->updateByPk($this->oldName, array("name"=>$this->name));
       $criteria = new CDbCriteria();

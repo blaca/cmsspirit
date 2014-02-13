@@ -33,13 +33,13 @@
 			<div id="logo"><a href="#" title="Spirit Content Manager System!">CMS</a></div>
 			<div class="info">
 			<?php if(!Yii::app()->user->isGuest) { ?>
-				<?php echo CHtml::link('LOGOUT',array('/site/logout'),array('id'=>'logout')); ?> |
+				<?php echo CHtml::link('Logout',array('/site/logout'),array('id'=>'logout')); ?> |
 				USER: <span class="username">
 				<?php echo CHtml::link(Yii::app()->user->username,array('/user/show','id'=>Yii::app()->user->id));?></span> |
 				ROLE: <?php echo  Yii::app()->user->role;?> |
 				LAST LOGON: <?php echo  Yii::app()->user->lastLoginTime;?>
 				
-				<?php echo CHtml::link('CLEAN CACHE',array('/website/CleanCache'));?>				
+				<?php echo CHtml::link('clean cache',array('/site/cleancache'));?>				
 			<?php }?>
 					
 			</div>

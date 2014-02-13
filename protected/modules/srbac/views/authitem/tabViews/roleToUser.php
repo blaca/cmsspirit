@@ -16,13 +16,13 @@
  ?>
 <!-- USER -> ROLES -->
 <div class="srbac">
-  <?php echo CHtml::beginForm(); ?>
-  <?php echo CHtml::errorSummary($model); ?>
-  <table>
+  <?php echo SHtml::beginForm(); ?>
+  <?php echo SHtml::errorSummary($model); ?>
+  <table width="100%">
     <tr><th colspan="2"><?php echo Helper::translate('srbac','Assign Roles to Users')?></th></tr>
     <tr>
       <th width="50%">
-      <?php echo CHtml::label(Helper::translate('srbac',"User"),'user'); ?></th>
+      <?php echo SHtml::label(Helper::translate('srbac',"User"),'user'); ?></th>
       <td width="50%" rowspan="2">
         <div id="roles">
           <?php
@@ -35,8 +35,11 @@
       </td>
     </tr>
     <tr valign="top">
-      <td><?php echo CHtml::activeDropDownList($this->module->getUserModel(),$this->module->userid,
-        Chtml::listData($this->module->getUserModel()->findAll(), $this->module->userid, $this->module->username),
+      <td><?php
+          $criteria = new CDbCriteria();
+          $criteria->order = $this->module->username;
+          echo SHtml::activeDropDownList($this->module->getUserModel(),$this->module->userid,
+        SHtml::listData($this->module->getUserModel()->findAll($criteria), $this->module->userid, $this->module->username),
         array('size'=>$this->module->listBoxNumberOfLines,'class'=>'dropdown','ajax' => array(
         'type'=>'POST',
         'url'=>array('getRoles'),
@@ -46,12 +49,12 @@
                   }',
         'complete' => 'function(){
                       $("#loadMess").removeClass("srbacLoading");
-                  }',
+                  }'
         ),
         )); ?>
       </td>
     </tr>
   </table>
   <br/>
-  <?php echo CHtml::endForm(); ?>
+  <?php echo SHtml::endForm(); ?>
 </div>

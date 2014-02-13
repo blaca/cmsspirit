@@ -116,10 +116,35 @@ return array (
 
   //Version 1.0.3
   "Module"=>"Módulo",
-  "Pages that access is always allowed"=>"Páginas cuyo acceso es siempre permitido",
-  "srbac must in debug mode" =>"Srbac debe estar en modo de depuración",
+  "Pages that access is always allowed"=>"Páginas cuyo acceso es siempre accesible",
+  "srbac must be in debug mode" =>"Srbac debe estar en modo de depuración",
   "Yii version"=>"Versión de Yii",
   "Wrong Yii version, lower required version is"=>"Versión de Yii incorrecta, la versión mínima requerida es",
   "There is an error in your configuration"=>"Hay un error en su configuración",
+
+  //Version 1.1
+  "Clever Assigning"=>"Asignación inteligente",
+  "Help"=>"Ayuda",
+  "Edit always allowed list"=>"Editar listado de Siempre Accesibles",
+  "The following authItems are saved in the always allowed file" =>
+  "Los siguientes permisos son guardados en el archivo de Siempre Accesibles",
+  "srbac is not configuered to use the alwaysAllowed GUI editor."=>
+  "Srbac no está configurado para usar la interfaz gráfica de usuario (GUI) para definir las páginas Siempre Accesibles",
+  "Remove alwaysAllowed attribute from srbac configuration or set it to 'gui'."=>
+  "Eliminar la configuración del atributo de páginas Siempre Accesibles o dar el valor de 'gui'.",
+  "The always allowed file is not writable by the server"=>"El archivo de Siempre Accesibles no tiene permisos de esritura",
+  // Version 1.1.1
+  "Srbac is installed but the CDBAuthManger table names in the database are different from those
+    in the CDBAuthManager configuration.<br />A common mistake is that names in database are in lowercase.<br />Srbac may not work correctly!!!"=>
+  "Srbac está instalado pero los nombres de las tablas de CDBAuthManager en la base de datos difieren de los
+    que están en la configuración de CDBAuthManager.<br />Un error común es que los nombres en la base de datos estén en minúsculas.<br />¡¡¡Srbac puede que no trabaje correctamente!!!",
+  "Clear obsolete authItems"=>"Limpiar permisos obsoletos",
+  "The following items doesn't seem to belong to a controller"=>"Los siguientes ítems no parecen pertenecer a un controlador",
+  "authItems removed"=>"Permisos eliminados",
+  "authItems not removed"=>"Permisos no eliminados",
+  "No authItems that don't belong to a controller were found"=>"No se encontraron permisos que pertenezcan a un controlador",
+  "select user"=>"seleccionar usuario",
+  "You are not authorized for this action"=>"No está autorizado para realizar esta acción",
+  "Error while trying to access"=>"Error al tratar de acceder",
 );
 ?>

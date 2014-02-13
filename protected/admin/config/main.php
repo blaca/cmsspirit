@@ -6,19 +6,20 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 
-// direct the path to the backend
 $backend=dirname(dirname(__FILE__));
 $frontend=dirname($backend);
 Yii::setPathOfAlias('backend', $backend);
 
 return array(
-	'basePath'=>$frontend,
+	'basePath' => $frontend,
 	'name'=>'CMS Spirit',
-	'timezone'=>'Asia/Shanghai',
+	'sourceLanguage'=>'zh_cn',
+	'timeZone' => 'Asia/Shanghai',
 		
-	'controllerPath'=>$backend.'/controllers',
-	'viewPath'=>$backend.'/views',
-	'runtimePath'=>$backend.'/runtime',
+		
+	'controllerPath' => $backend.'/controllers',
+	'viewPath' => $backend.'/views',
+	'runtimePath' => $backend.'/runtime',
 
 	// autoloading model and component classes
 	'import' => array(
@@ -48,7 +49,7 @@ return array(
 			
 		'srbac'=>array(
 			// Your application's user class (default: User)
-			"userclass"=>"user",
+			"userclass"=>"User",
 			// Your users' table user_id column (default: userid)
 			"userid"=>"userid",
 			// your users' table username column (default: username)
@@ -149,11 +150,11 @@ return array(
 				// The database connection used
 				'connectionID'=>'db',
 				// The itemTable name (default:authitem)
-				'itemTable'=>'AuthItem',
+				'itemTable'=>'authitem',
 				// The assignmentTable name (default:authassignment)
-				'assignmentTable'=>'AuthAssignment',
+				'assignmentTable'=>'authassignment',
 				// The itemChildTable name (default:authitemchild)
-				'itemChildTable'=>'AuthItemChild',
+				'itemChildTable'=>'authitemchild',
 		),
 	),
 

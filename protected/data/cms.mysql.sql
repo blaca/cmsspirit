@@ -31,3 +31,4 @@ CREATE TABLE IF NOT EXISTS `AuthItemChild` (
   `child` varchar(64) NOT NULL,
   PRIMARY KEY  (`parent`,`child`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
