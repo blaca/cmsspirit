@@ -2,49 +2,16 @@
 
 class UserController extends BaseController
 {
+	
+	public $defaultAction = "admin";
+	
+	const DEFAULT_PAGE_SIZE=10;
+	
 	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
+	 * @var the UserModel.
 	 */
-	public $layout='//layouts/column2';
-
-	/**
-	 * @return array action filters
-	 */
-// 	public function filters()
-// 	{
-// 		return array(
-// 			'accessControl', // perform access control for CRUD operations
-// 			'postOnly + delete', // we only allow deletion via POST request
-// 		);
-// 	}
-
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-// 	public function accessRules()
-// 	{
-// 		return array(
-// 			array('allow',  // allow all users to perform 'index' and 'view' actions
-// 				'actions'=>array('index','view'),
-// 				'users'=>array('*'),
-// 			),
-// 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-// 				'actions'=>array('create','update'),
-// 				'users'=>array('@'),
-// 			),
-// 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-// 				'actions'=>array('admin','delete'),
-// 				'users'=>array('admin'),
-// 			),
-// 			array('deny',  // deny all users
-// 				'users'=>array('*'),
-// 			),
-// 		);
-// 	}
-
+	protected $_model;
+	
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -54,6 +21,14 @@ class UserController extends BaseController
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
+	}
+	
+	/**
+	 * Shows a selected model.
+	 */
+	public function actionShow()
+	{
+		$this->render('show',array('model'=>$this->loaduser()));
 	}
 
 	/**
@@ -118,29 +93,57 @@ class UserController extends BaseController
 	}
 
 	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('User');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
-	/**
 	 * Manages all models.
 	 */
 	public function actionAdmin()
 	{
-		$model=new User('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['User']))
-			$model->attributes=$_GET['User'];
+		$this->processAdminCommand();
+		
+		$criteria = new CDbCriteria();
+		$pages = new CPagination(User::model()->count($criteria));
+		$pages->pageSize = self::DEFAULT_PAGE_SIZE;
+		$pages->applyLimit($criteria);
+		
+		$sort=new CSort('user');
+		$sort->applyOrder($criteria);
+		
+		$models=user::model()->findAll($criteria);
 
 		$this->render('admin',array(
-			'model'=>$model,
+			'models'=>$models,
+			'pages'=>$pages,
+			'sort'=>$sort,
 		));
+	}
+	
+	/**
+	 * Executes any command triggered on the admin page.
+	 */
+	protected function processAdminCommand()
+	{
+		if(isset($_POST['command'], $_POST['id']) && $_POST['command']==='delete')
+		{
+			$this->loaduser($_POST['id'])->delete();
+			// reload the current page to avoid duplicated delete actions
+			$this->refresh();
+		}
+	}
+	
+	/**
+	 * Returns the data model based on the primary key given in the GET variable.
+	 * If the data model is not found, an HTTP exception will be raised.
+	 * @param integer the primary key value. Defaults to null, meaning using the 'id' GET variable
+	 */
+	protected function loaduser($id=null)
+	{
+		if($this->_model===null)
+		{
+			if($id!==null || isset($_GET['id']))
+				$this->_model=user::model()->findbyPk($id!==null ? $id : $_GET['id']);
+			if($this->_model===null)
+				throw new CHttpException(404,'The requested page does not exist.');
+		}
+		return $this->_model;
 	}
 
 	/**

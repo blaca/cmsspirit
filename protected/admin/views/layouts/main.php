@@ -40,8 +40,7 @@
 				LAST LOGON: <?php echo  Yii::app()->user->lastLoginTime;?>
 				
 				<?php echo CHtml::link('clean cache',array('/site/cleancache'));?>				
-			<?php }?>
-					
+			<?php }?>					
 			</div>
 		</ul>
 	</div>
@@ -50,16 +49,46 @@
 		</div>
 	</div>
 	
+	<?php 
+	$userid=Yii::app()->user->id;
+	
+	$cache_key=md5("getOpeartionList".$userid);
+	if(!$data=Yii::app()->cache->get($cache_key))
+	{	
+		// check user roles. ('UserMange')
+		if(Yii::app()->user->checkAccess('UserManage'))
+		{
+			$data['user'] = array(
+				"text"=> "User Center",
+				"expanded"=> true,
+				"classes" => "important",
+				"icon"=>"user",
+				"children" => array(
+					'list' => array(
+						'text'=> CHtml::link('User List',array('/user/')),
+					),
+				),
+			);
+		}
+		
+		Yii::app()->cache->set($cache_key,$data);
+		}
+		
+		$this->widget('CTreeView',array('persist'=>'cookie','data'=>$data,'htmlOptions'=>array('id'=>'treeview','class'=>'filetree  treeview-famfamfam')));		
+	?>
+	
 	<div id="primary">
 			<?php echo $content; ?>
 	</div>
 	<div class="clear"></div>
-</div>
 
-<div id="footer">
-	<div id="copyright">Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-				All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
+
+	<div id="footer">
+		<div id="copyright">Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+					All Rights Reserved.<br/>
+			<?php echo Yii::powered(); ?>
+		</div>
 	</div>
 </div>
 </body>
+</html>

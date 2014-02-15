@@ -44,4 +44,18 @@ class SiteController extends BaseController
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+	
+	/**
+	 * clean cache
+	 */
+	public function actionCleanCache()
+	{
+		# code...
+		Yii::app()->cache->flush();
+		
+		$request = Yii::app()->request;
+		
+		$url = $request->url != $request->urlReferrer ? $request->urlReferrer : array('site/index');
+		$this->redirect($url);
+	}
 }

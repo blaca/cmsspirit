@@ -1,64 +1,38 @@
-<?php
-/* @var $this UserController */
-/* @var $model User */
+<?php include('_top.php');?>
 
-$this->breadcrumbs=array(
-	'Users'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	array('label'=>'List User', 'url'=>array('index')),
-	array('label'=>'Create User', 'url'=>array('create')),
-);
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#user-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
-?>
-
-<h1>Manage Users</h1>
-
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'user-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'userid',
-		'username',
-		'password',
-		'realname',
-		'email',
-		'profile',
-		/*
-		'regIp',
-		'regTime',
-		'lastLoginIp',
-		'lastLoginTime',
-		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+<table class="dataGrid">
+  <thead>
+  <tr>
+    <th><?php echo $sort->link('userid'); ?></th>
+    <th><?php echo $sort->link('username'); ?></th>
+    <th><?php echo $sort->link('email'); ?></th>
+    <th><?php echo $sort->link('regIp'); ?></th>
+    <th><?php echo $sort->link('regTime'); ?></th>
+    <th><?php echo $sort->link('lastLoginIp'); ?></th>
+    <th><?php echo $sort->link('lastLoginTime'); ?></th>
+	<th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+<?php foreach($models as $n=>$model): ?>
+  <tr class="<?php echo $n%2?'even':'odd';?>">
+    <td><?php echo CHtml::link($model->userid,array('show','id'=>$model->userid)); ?></td>
+    <td><?php echo CHtml::link($model->username,array('show','id'=>$model->userid)); ?></td>
+    <td><?php echo CHtml::encode($model->email); ?></td>
+    <td><?php echo CHtml::encode($model->regIp); ?></td>
+    <td><?php echo CHtml::encode(date('Y-m-d',strtotime($model->regTime))); ?></td>
+    <td><?php echo CHtml::encode($model->lastLoginIp); ?></td>
+    <td><?php echo CHtml::encode($model->lastLoginTime); ?></td>
+    <td>
+      <?php echo CHtml::link('update',array('update','id'=>$model->userid)); ?>
+      <?php echo CHtml::linkButton('delete',array(
+      	  'submit'=>'',
+      	  'params'=>array('command'=>'delete','id'=>$model->userid),
+      	  'confirm'=>"confirm delete#{$model->userid}?")); ?>
+	</td>
+  </tr>
+<?php endforeach; ?>
+  </tbody>
+</table>
+<br/>
+<?php $this->widget('CLinkPager',array('pages'=>$pages)); ?>
