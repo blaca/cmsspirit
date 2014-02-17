@@ -30,7 +30,7 @@
 <div id="warp">
 	<div id="header">
 		<ul id="toolbar">
-			<div id="logo"><a href="#" title="Spirit Content Manager System!">CMS</a></div>
+			<div id="logo"><a href="#" title="Spirit Content Manager System!">Dashboard</a></div>
 			<div class="info">
 			<?php if(!Yii::app()->user->isGuest) { ?>
 				<?php echo CHtml::link('Logout',array('/site/logout'),array('id'=>'logout')); ?> |
@@ -46,42 +46,63 @@
 	</div>
 	<div id="mainarea">
 		<div id="sidebar">
+		<?php 
+			$userid=Yii::app()->user->id;
+			
+			$cache_key=md5("getOpeartionList".$userid);
+			if(!$data=Yii::app()->cache->get($cache_key))
+			{	
+				// check user roles. ('UserManger')
+				if (Yii::app()->user->checkAccess('UserManager'))
+				{
+					$data['user'] = array(
+						"text" => "User Center",
+						"expanded" => true,
+						"classes" => "important",
+						"icon" => "user",
+						"children" => array(
+							'list' => array(
+								'text'=> CHtml::link('User List',array('/user/')),
+							),
+						),
+					);
+				}
+				
+				// check user roles ('PostManager')
+				if (Yii::app()->user->checkAccess('PostManager'))
+				{
+					$data['post'] = array(
+						"text" => "Post Center",
+						"expanded" => true,
+						"classes" => "import",
+						"icon" => "Post",
+						"children"=>array(
+							0 => array(
+								'text' => CHtml::link('Post List', array('/post/')),
+							),
+							1 => array(
+								'text' => CHtml::link('Comment List', array('/comment/')),
+							),
+							2 => array(
+								'text' => CHtml::link('blocked comment', array('/comment/blocked')),
+							)
+						),
+					);
+				}
+				
+				Yii::app()->cache->set($cache_key,$data);
+			}
+				
+			$this->widget('CTreeView',array('persist'=>'cookie','data'=>$data,'htmlOptions'=>array('id'=>'treeview','class'=>'filetree  treeview-famfamfam')));		
+		?>	
+	
 		</div>
-	</div>
-	
-	<?php 
-	$userid=Yii::app()->user->id;
-	
-	$cache_key=md5("getOpeartionList".$userid);
-	if(!$data=Yii::app()->cache->get($cache_key))
-	{	
-		// check user roles. ('UserMange')
-		if(Yii::app()->user->checkAccess('UserManage'))
-		{
-			$data['user'] = array(
-				"text"=> "User Center",
-				"expanded"=> true,
-				"classes" => "important",
-				"icon"=>"user",
-				"children" => array(
-					'list' => array(
-						'text'=> CHtml::link('User List',array('/user/')),
-					),
-				),
-			);
-		}
-		
-		Yii::app()->cache->set($cache_key,$data);
-		}
-		
-		$this->widget('CTreeView',array('persist'=>'cookie','data'=>$data,'htmlOptions'=>array('id'=>'treeview','class'=>'filetree  treeview-famfamfam')));		
-	?>
-	
-	<div id="primary">
-			<?php echo $content; ?>
-	</div>
-	<div class="clear"></div>
 
+		<div id="primary">
+			<?php echo $content; ?>
+		</div>
+		<div class="clear"></div>
+	</div>
 
 	<div id="footer">
 		<div id="copyright">Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>

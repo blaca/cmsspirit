@@ -2,7 +2,9 @@
 
 class UserController extends BaseController
 {
-	
+	/**
+	 * @var set the default action.
+	 */
 	public $defaultAction = "admin";
 	
 	const DEFAULT_PAGE_SIZE=10;

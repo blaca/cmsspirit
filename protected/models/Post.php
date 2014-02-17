@@ -120,7 +120,7 @@ class Post extends CActiveRecord
 			'copy_url' => 'Copy Url',
 			'redirect_url' => 'Redirect Url',
 			'tags' => 'Tags',
-			'view_count' => 'View Count',
+			'view_count' => 'View',
 			'commend' => 'Commend',
 			'attach_status' => 'Attach Status',
 			'attach_file' => 'Attach File',

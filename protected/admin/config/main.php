@@ -13,7 +13,7 @@ Yii::setPathOfAlias('backend', $backend);
 return array(
 	'basePath' => $frontend,
 	'name'=>'CMS Spirit',
-	'sourceLanguage'=>'zh_cn',
+	'sourceLanguage'=>'us_en',
 	'timeZone' => 'Asia/Shanghai',
 		
 		
@@ -163,5 +163,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'menggangcsu@gmail.com',
+		'cms_version' 	=> 'CMS Spirit v1.0.0',
 	),
 );
