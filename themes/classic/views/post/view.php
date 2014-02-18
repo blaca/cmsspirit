@@ -1,15 +1,3 @@
-<?php
-/* @var $this PostController */
-/* @var $model Post */
-
-/* $this->breadcrumbs=array(
-	'Posts'=>array('index'),
-	$model->title,
-); */
-
-?>
-
-
 <div class="mainWrap">
 	<div class="topDesc">
 	  <div class="desc">

@@ -102,7 +102,7 @@ class PostController extends Controller
 		{
 			$model->attributes=$_POST['Post'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('show','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -126,7 +126,7 @@ class PostController extends Controller
 		{
 			$model->attributes=$_POST['Post'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('show','id'=>$model->id));
 		}
 
 		$this->render('update',array(

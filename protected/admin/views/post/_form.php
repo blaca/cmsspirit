@@ -18,13 +18,25 @@ The item with<span class="required">*</span> are must
 <?php echo CHtml::activeLabelEx($model,'title'); ?>
 <?php echo CHtml::activeTextField($model,'title',array('size'=>60,'maxlength'=>255)); ?>
 </div>
+
+<div class="simple">
+<?php echo CHtml::activeLabelEx($model,'copy_from'); ?>
+<?php echo CHtml::activeTextField($model,'copy_from',array('size'=>60,'maxlength'=>255)); ?>
+</div>
+
+<div class="simple">
+<?php echo CHtml::activeLabelEx($model,'copy_url'); ?>
+<?php echo CHtml::activeTextField($model,'copy_url',array('size'=>60,'maxlength'=>255)); ?>
+</div>
     
 <div class="simple">
-<?php echo CHtml::activeLabelEx($model,'Content'); ?>
-<?php echo CHtml::activeTextField($model,'content', array('class'=>'validate[required]')); ?>
-<?php $this->widget('application.vendor.kindeditor.KindEditor',array(
-	  'target'=>array(
-	  	'#Post_content'=>array('uploadJson'=>$this->createUrl('upload'),'extraFileUploadParams'=>array(array('sessionId'=>session_id()))))));?>
+<?php $this->widget('ext.kindeditor.KindEditor', array(
+			'model'=>$model,
+	        'attribute'=>'content',
+	        )
+        ); ?>
+<?php echo CHtml::activeLabelEx($model, 'content'); ?>
+<?php echo CHtml::activeTextArea($model,'content',array('rows'=>30, 'cols'=>100)); ?>
 </div>
 
 <div class="action">

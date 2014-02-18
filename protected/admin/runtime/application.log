@@ -1923,3 +1923,274 @@ Stack trace:
 REQUEST_URI=/cmsspirit/admin.php?r=comment
 HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post
 ---
+2014/02/18 20:00:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('comment')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=comment
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post
+---
+2014/02/18 20:22:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('view')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('view')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=post/view&id=1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post/update&id=1
+---
+2014/02/18 20:22:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "upload".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('upload')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('upload')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/upload')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=post/upload&dir=image
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post/update&id=1
+---
+2014/02/18 20:28:05 [error] [exception.CException] exception 'CException' with message 'Property "Post.$copy_from" is not defined.' in C:\wamp\www\cmsspirit\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\db\ar\CActiveRecord.php(145): CComponent->__get('$copy_from')
+#1 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('$copy_from')
+#2 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Post), '$copy_from')
+#3 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Post), '$copy_from', Array)
+#4 C:\wamp\www\cmsspirit\protected\admin\views\post\_form.php(24): CHtml::activeTextField(Object(Post), '$copy_from', Array)
+#5 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#6 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#7 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#8 C:\wamp\www\cmsspirit\protected\admin\views\post\update.php(3): CController->renderPartial('_form', Array)
+#9 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#10 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#11 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#12 C:\wamp\www\cmsspirit\protected\components\Controller.php(56): CController->renderPartial('update', Array, true)
+#13 C:\wamp\www\cmsspirit\protected\admin\controllers\PostController.php(134): Controller->render('update', Array)
+#14 [internal function]: PostController->actionUpdate('1')
+#15 C:\wamp\www\cmsspirit\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PostController), Array)
+#16 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PostController), Object(ReflectionMethod), Array)
+#17 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#19 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('update')
+#21 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/update')
+#22 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#24 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=post/update&id=1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post
+---
+2014/02/18 20:28:14 [error] [exception.CException] exception 'CException' with message 'Property "Post.$copy_from" is not defined.' in C:\wamp\www\cmsspirit\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\db\ar\CActiveRecord.php(145): CComponent->__get('$copy_from')
+#1 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('$copy_from')
+#2 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Post), '$copy_from')
+#3 C:\wamp\www\cmsspirit\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Post), '$copy_from', Array)
+#4 C:\wamp\www\cmsspirit\protected\admin\views\post\_form.php(24): CHtml::activeTextField(Object(Post), '$copy_from', Array)
+#5 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#6 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#7 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#8 C:\wamp\www\cmsspirit\protected\admin\views\post\update.php(3): CController->renderPartial('_form', Array)
+#9 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#10 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#11 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#12 C:\wamp\www\cmsspirit\protected\components\Controller.php(56): CController->renderPartial('update', Array, true)
+#13 C:\wamp\www\cmsspirit\protected\admin\controllers\PostController.php(134): Controller->render('update', Array)
+#14 [internal function]: PostController->actionUpdate('1')
+#15 C:\wamp\www\cmsspirit\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PostController), Array)
+#16 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PostController), Object(ReflectionMethod), Array)
+#17 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#19 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('update')
+#21 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/update')
+#22 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#24 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=post/update&id=1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post/show&id=1
+---
+2014/02/18 22:21:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('view')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('view')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=post/view&id=1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post/update&id=1
+---
+2014/02/18 22:22:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('view')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('view')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=post/view&id=1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post/update&id=1
+---
+2014/02/18 23:10:44 [error] [exception.CException] exception 'CException' with message 'Alias "ext.wdueditor.WDueditor" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\wamp\www\cmsspirit\framework\YiiBase.php:322
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWidgetFactory.php(146): YiiBase::import('ext.wdueditor.W...', true)
+#1 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(PostController), 'ext.wdueditor.W...', Array)
+#2 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.wdueditor.W...', Array)
+#3 C:\wamp\www\cmsspirit\protected\admin\views\post\_form.php(39): CBaseController->widget('ext.wdueditor.W...', Array)
+#4 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#5 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#6 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#7 C:\wamp\www\cmsspirit\protected\admin\views\post\update.php(3): CController->renderPartial('_form', Array)
+#8 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#9 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#10 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#11 C:\wamp\www\cmsspirit\protected\components\Controller.php(56): CController->renderPartial('update', Array, true)
+#12 C:\wamp\www\cmsspirit\protected\admin\controllers\PostController.php(134): Controller->render('update', Array)
+#13 [internal function]: PostController->actionUpdate('1')
+#14 C:\wamp\www\cmsspirit\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PostController), Array)
+#15 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PostController), Object(ReflectionMethod), Array)
+#16 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('update')
+#20 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/update')
+#21 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#23 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=post/update&id=1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post
+---
+2014/02/18 23:17:25 [error] [exception.CException] exception 'CException' with message 'Alias "extensions.wdueditor.WDueditor" is invalid. Make sure it points to an existing directory or file.' in C:\wamp\www\cmsspirit\framework\YiiBase.php:347
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWidgetFactory.php(146): YiiBase::import('extensions.wdue...', true)
+#1 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(PostController), 'extensions.wdue...', Array)
+#2 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(172): CBaseController->createWidget('extensions.wdue...', Array)
+#3 C:\wamp\www\cmsspirit\protected\admin\views\post\_form.php(39): CBaseController->widget('extensions.wdue...', Array)
+#4 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#5 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#6 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#7 C:\wamp\www\cmsspirit\protected\admin\views\post\update.php(3): CController->renderPartial('_form', Array)
+#8 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#9 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#10 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#11 C:\wamp\www\cmsspirit\protected\components\Controller.php(56): CController->renderPartial('update', Array, true)
+#12 C:\wamp\www\cmsspirit\protected\admin\controllers\PostController.php(134): Controller->render('update', Array)
+#13 [internal function]: PostController->actionUpdate('1')
+#14 C:\wamp\www\cmsspirit\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PostController), Array)
+#15 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PostController), Object(ReflectionMethod), Array)
+#16 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('update')
+#20 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/update')
+#21 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#23 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=post/update&id=1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post
+---
+2014/02/18 23:17:27 [error] [exception.CException] exception 'CException' with message 'Alias "extensions.wdueditor.WDueditor" is invalid. Make sure it points to an existing directory or file.' in C:\wamp\www\cmsspirit\framework\YiiBase.php:347
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWidgetFactory.php(146): YiiBase::import('extensions.wdue...', true)
+#1 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(PostController), 'extensions.wdue...', Array)
+#2 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(172): CBaseController->createWidget('extensions.wdue...', Array)
+#3 C:\wamp\www\cmsspirit\protected\admin\views\post\_form.php(39): CBaseController->widget('extensions.wdue...', Array)
+#4 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#5 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#6 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#7 C:\wamp\www\cmsspirit\protected\admin\views\post\update.php(3): CController->renderPartial('_form', Array)
+#8 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#9 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#10 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#11 C:\wamp\www\cmsspirit\protected\components\Controller.php(56): CController->renderPartial('update', Array, true)
+#12 C:\wamp\www\cmsspirit\protected\admin\controllers\PostController.php(134): Controller->render('update', Array)
+#13 [internal function]: PostController->actionUpdate('1')
+#14 C:\wamp\www\cmsspirit\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PostController), Array)
+#15 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PostController), Object(ReflectionMethod), Array)
+#16 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('update')
+#20 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/update')
+#21 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#23 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=post/update&id=1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post
+---
+2014/02/18 23:17:30 [error] [exception.CException] exception 'CException' with message 'Alias "extensions.wdueditor.WDueditor" is invalid. Make sure it points to an existing directory or file.' in C:\wamp\www\cmsspirit\framework\YiiBase.php:347
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWidgetFactory.php(146): YiiBase::import('extensions.wdue...', true)
+#1 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(PostController), 'extensions.wdue...', Array)
+#2 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(172): CBaseController->createWidget('extensions.wdue...', Array)
+#3 C:\wamp\www\cmsspirit\protected\admin\views\post\_form.php(39): CBaseController->widget('extensions.wdue...', Array)
+#4 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#5 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#6 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#7 C:\wamp\www\cmsspirit\protected\admin\views\post\update.php(3): CController->renderPartial('_form', Array)
+#8 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#9 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#10 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#11 C:\wamp\www\cmsspirit\protected\components\Controller.php(56): CController->renderPartial('update', Array, true)
+#12 C:\wamp\www\cmsspirit\protected\admin\controllers\PostController.php(134): Controller->render('update', Array)
+#13 [internal function]: PostController->actionUpdate('1')
+#14 C:\wamp\www\cmsspirit\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(PostController), Array)
+#15 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PostController), Object(ReflectionMethod), Array)
+#16 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('update')
+#20 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/update')
+#21 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#23 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=post/update&id=1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post
+---
+2014/02/18 23:26:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('view')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('view')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=post/view&id=1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post/update&id=1
+---
+2014/02/18 23:42:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('view')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('view')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=post/view&id=1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post/update&id=1
+---
+2014/02/18 23:43:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('view')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('view')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/view')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=post/view&id=1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post/update&id=1
+---
+2014/02/18 23:47:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('comment')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=comment
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post
+---
