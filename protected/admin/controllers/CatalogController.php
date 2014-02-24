@@ -1,25 +1,20 @@
 <?php
 
-class UserController extends BaseController
+class CatalogController extends Controller
 {
-	/**
-	 * @var set the default action.
-	 */
 	public $defaultAction = "admin";
-	
-	const DEFAULT_PAGE_SIZE=10;
-	
+
+	public $_model;
+
 	/**
-	 * @var the UserModel.
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
 	 */
-	protected $_model;
-		
-	/**
-	 * Shows a selected model.
-	 */
-	public function actionShow()
+	public function actionView($id)
 	{
-		$this->render('show',array('model'=>$this->loaduser()));
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
 	}
 
 	/**
@@ -28,16 +23,16 @@ class UserController extends BaseController
 	 */
 	public function actionCreate()
 	{
-		$model=new User;
+		$model=new Catalog;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['User']))
+		if(isset($_POST['Catalog']))
 		{
-			$model->attributes=$_POST['User'];
+			$model->attributes=$_POST['Catalog'];
 			if($model->save())
-				$this->redirect(array('show','id'=>$model->userid));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -57,11 +52,11 @@ class UserController extends BaseController
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['User']))
+		if(isset($_POST['Catalog']))
 		{
-			$model->attributes=$_POST['User'];
+			$model->attributes=$_POST['Catalog'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->userid));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -88,19 +83,19 @@ class UserController extends BaseController
 	 */
 	public function actionAdmin()
 	{
-		$this->processAdminCommand();
+		$this->processCommand();
 		
 		$criteria = new CDbCriteria();
-		$pages = new CPagination(User::model()->count($criteria));
-		$pages->pageSize = self::DEFAULT_PAGE_SIZE;
+		
+		$pages = new CPagination(Catalog::model()->count($criteria));
 		$pages->applyLimit($criteria);
 		
-		$sort=new CSort('user');
+		$sort = new CSort('Post');
 		$sort->applyOrder($criteria);
 		
-		$models=user::model()->findAll($criteria);
-
-		$this->render('admin',array(
+		$models = Catalog::model()->findAll($criteria);
+		
+		$this->render('admin', array(
 			'models'=>$models,
 			'pages'=>$pages,
 			'sort'=>$sort,
@@ -110,43 +105,28 @@ class UserController extends BaseController
 	/**
 	 * Executes any command triggered on the admin page.
 	 */
-	protected function processAdminCommand()
+	protected function processCommand()
 	{
 		if(isset($_POST['command'], $_POST['id']) && $_POST['command']==='delete')
 		{
-			$this->loaduser($_POST['id'])->delete();
+			$this->loadModel($_POST['id'])->delete();
 			// reload the current page to avoid duplicated delete actions
 			$this->refresh();
 		}
 	}
 	
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer the primary key value. Defaults to null, meaning using the 'id' GET variable
-	 */
-	protected function loaduser($id=null)
-	{
-		if($this->_model===null)
-		{
-			if($id!==null || isset($_GET['id']))
-				$this->_model=user::model()->findbyPk($id!==null ? $id : $_GET['id']);
-			if($this->_model===null)
-				throw new CHttpException(404,'The requested page does not exist.');
-		}
-		return $this->_model;
-	}
+	
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return User the loaded model
+	 * @return Catalog the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=User::model()->findByPk($id);
+		$model=Catalog::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -154,11 +134,11 @@ class UserController extends BaseController
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param User $model the model to be validated
+	 * @param Catalog $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='catalog-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

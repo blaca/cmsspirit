@@ -11,8 +11,9 @@ class SiteController extends BaseController
 	{
 		if(!Yii::app()->user->isGuest)
 		{
-			$this->redirect(array('index'));
-		}		
+			$this->redirect(array('site/index'));
+		}
+		
 		$form=new LoginForm;
 		// collect user input data
 		if(isset($_POST['LoginForm']))
@@ -32,7 +33,7 @@ class SiteController extends BaseController
 	 * the view file: /Protected/views/site/index.php
 	 */
 	public function actionIndex()
-	{
+	{		
 		$this->render('index');
 	}
 	
@@ -57,5 +58,19 @@ class SiteController extends BaseController
 		
 		$url = $request->url != $request->urlReferrer ? $request->urlReferrer : array('site/index');
 		$this->redirect($url);
+	}
+	
+	/**
+	 * This is the action to handle external exceptions.
+	 */
+	public function actionError()
+	{
+		if($error=Yii::app()->errorHandler->error)
+		{
+			if(Yii::app()->request->isAjaxRequest)
+				echo $error['message'];
+			else
+				$this->render('error', $error);
+		}
 	}
 }

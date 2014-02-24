@@ -90,6 +90,30 @@
 					);
 				}
 				
+				// the site settings module.
+				if (Yii::app()->user->checkAccess('Administrator')) {
+					$data['setting'] = array(
+						"text" => "Site Setting",
+						"expanded" => true,
+						"classes" => "config",
+						"icon" => "config",
+						"children" => array(
+							0 => array(
+								'text' => CHtml::link('Site info', array('/')),
+							),
+							1 => array(
+								'text' => CHtml::link('Site Setting', array('/config/')),
+							),
+							2 => array(
+								'text' => CHtml::link('Custom Setting', array('/config/')),
+							),
+							3 => array(
+								'text' => CHtml::link('Catalog Setting', array('/catalog/')),
+							) 
+						),
+					);
+				}
+				
 				Yii::app()->cache->set($cache_key,$data);
 			}
 				

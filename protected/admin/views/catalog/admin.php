@@ -4,10 +4,10 @@
 	<thead>
 		<tr>
 			<th><?php echo $sort->link('id'); ?></th>
-		    <th><?php echo $sort->link('catalog_id'); ?></th>
-		    <th><?php echo $sort->link('title'); ?></th>
-		    <th><?php echo $sort->link('update_time'); ?></th>
-		    <th><?php echo $sort->link('view_count'); ?></th>
+		    <th><?php echo $sort->link('catalog_name'); ?></th>
+		    <th><?php echo $sort->link('catalog_name_second'); ?></th>
+		    <th><?php echo $sort->link('catalog_name_alias'); ?></th>
+		    <th><?php echo $sort->link('create_time'); ?></th>
 			<th>Actions</th>
 		</tr>
 	</thead>
@@ -16,10 +16,10 @@
 		<?php foreach($models as $n=>$model): ?>
 			<tr class="<?php echo $n%2?'even':'odd';?>">
 				<td><?php echo CHtml::link($model->id,array('show','id'=>$model->id)); ?></td>
-				<td><?php echo CHtml::encode( $this->catalog_list[$model->catalog_id]); ?></td>
-				<td><?php echo CHtml::link($model->title,array('show','id'=>$model->id)); ?></td>
-				<td><?php echo CHtml::encode($model->update_time); ?>
-				<td><?php echo CHtml::encode($model->view_count); ?>
+				<td><?php echo CHtml::encode($model->catalog_name); ?></td>
+				<td><?php echo CHtml::encode($model->catalog_name_second); ?></td>
+				<td><?php echo CHtml::encode($model->catalog_name_alias); ?></td>
+				<td><?php echo CHtml::encode($model->create_time); ?>
 				
 				<td>
 			      <?php echo CHtml::link('update',array('update','id'=>$model->id)); ?>

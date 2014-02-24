@@ -2,6 +2,14 @@
 	<h2>CMS Information</h2>
 	<br/>
 	
+	<h3>
+		<?php echo "Here's welcome information."?>
+	</h3>
+	<h3>
+		<?php echo "And here's memo"?>
+	</h3>
+	<br/>
+	
 	<h3>System Infomation</h3>
 	
 	<ul class="memlist">
@@ -10,31 +18,31 @@
 			<em class="memcont"><?php echo Yii::app()->params['cms_version']; ?></em>
 		</li>
 		<li>
-			<em>PHP程式版本:</em>	
+			<em>PHP Version:</em>	
 			<em class="memcont"><?PHP echo PHP_VERSION; ?></em>
 		</li>
 		<li>
-			<em>ZEND版本:</em>	
+			<em>ZEND Version:</em>	
 			<em class="memcont"><?PHP echo zend_version(); ?></em>
 		</li>
 		<li>
-			<em>服务器操作系统:</em>	
+			<em>Operate System:</em>	
 			<em class="memcont"><?PHP echo PHP_OS; ?></em>
 		</li>
 		<li>
-			<em>服务器端信息:</em>	
+			<em>Server Info:</em>	
 			<em class="memcont"><?PHP echo $_SERVER['SERVER_SOFTWARE']; ?></em>
 		</li>
 		<li>
-			<em>最大上传限制:</em>	
+			<em>Upload Limit:</em>	
 			<em class="memcont"><?PHP echo get_cfg_var("upload_max_filesize")?get_cfg_var("upload_max_filesize"):"不允许上传附件"; ?></em>
 		</li>	
 		<li>
-			<em>最大执行时间:</em>	
-			<em class="memcont"><?PHP echo get_cfg_var("max_execution_time")."秒"; ?></em>
+			<em>Max exec.time:</em>	
+			<em class="memcont"><?PHP echo get_cfg_var("max_execution_time")."Sec"; ?></em>
 		</li>
 		<li>
-			<em>运行占用最大内存:</em>	
+			<em>Memory limit:</em>	
 			<em class="memcont"><?PHP echo get_cfg_var("memory_limit")?get_cfg_var("memory_limit"):"无" ?></em>
 		</li>		
 	</ul>

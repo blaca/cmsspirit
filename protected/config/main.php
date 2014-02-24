@@ -13,7 +13,7 @@ return array(
 	'preload'=>array('log'),
 	
 	// the default theme
-	'theme'=>'classic',
+	'theme'=>'metal',
 
 	// autoloading model and component classes
 	'import'=>array(

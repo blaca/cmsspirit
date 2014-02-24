@@ -14,6 +14,22 @@ class PostController extends Controller
 	 * @var The title to display the artical
 	 */
 	public $_model;
+	
+	public $catalog_list;
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see CController::init()
+	 */
+	public function init(){
+		$criteria = new CDbCriteria();
+		$criteria->condition .= " parent_id != 0";
+		
+		$models = Catalog::model()->findAll($criteria);
+		
+		$this->catalog_list = CHtml::listData($models,
+								'id', 'catalog_name');
+	}
 
 	/**
 	 * Displays a particular model.
@@ -45,6 +61,7 @@ class PostController extends Controller
 		$pages->applyLimit($criteria);
 		
 		$sort = new CSort('Post');
+		$criteria->order = "id desc";
 		$sort->applyOrder($criteria);
 		
 		$models = Post::model()->findAll($criteria);
@@ -93,7 +110,7 @@ class PostController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Post;
+		$model=new Post();
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -164,6 +181,7 @@ class PostController extends Controller
 		
 		$this->render('index', $dataProvider);
 	}
+
 	
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

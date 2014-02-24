@@ -1,4 +1,5 @@
-framework/
-runtime/
+assets
+framework
+runtime
 *.bin
 *.log

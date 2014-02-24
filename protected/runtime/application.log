@@ -3593,3 +3593,66 @@ REQUEST_URI=/cmsspirit/index.php?r=post/show&id=1
 in C:\wamp\www\cmsspirit\themes\classic\views\post\view.php (54)
 in C:\wamp\www\cmsspirit\protected\components\Controller.php (56)
 in C:\wamp\www\cmsspirit\protected\controllers\PostController.php (149)
+2014/02/24 10:07:57 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "getAttributes".' in C:\wamp\www\cmsspirit\framework\base\CComponent.php:266
+Stack trace:
+#0 xdebug://debug-eval(1): CComponent->__call('getAttributes', Array)
+#1 xdebug://debug-eval(1): SiteController->getAttributes(NULL)
+#2 C:\wamp\www\cmsspirit\themes\metal\views\layouts\main.php(10): unknown()
+#3 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#4 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#5 C:\wamp\www\cmsspirit\protected\components\Controller.php(58): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#6 C:\wamp\www\cmsspirit\protected\controllers\SiteController.php(45): Controller->render('index', Array)
+#7 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#8 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('')
+#12 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#13 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/cmsspirit/index.php
+---
+2014/02/24 10:15:18 [error] [php] Object of class CTheme could not be converted to string (C:\wamp\www\cmsspirit\themes\metal\views\layouts\main.php:13)
+Stack trace:
+#0 C:\wamp\www\cmsspirit\protected\components\Controller.php(58): SiteController->renderFile()
+#1 C:\wamp\www\cmsspirit\protected\controllers\SiteController.php(45): SiteController->render()
+#2 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#3 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\wamp\www\cmsspirit\framework\web\CController.php(286): SiteController->runAction()
+#5 C:\wamp\www\cmsspirit\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): SiteController->run()
+#7 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\wamp\www\cmsspirit\index.php(13): CWebApplication->run()
+REQUEST_URI=/cmsspirit/index.php
+in C:\wamp\www\cmsspirit\themes\metal\views\layouts\main.php (13)
+in C:\wamp\www\cmsspirit\protected\components\Controller.php (58)
+in C:\wamp\www\cmsspirit\protected\controllers\SiteController.php (45)
+2014/02/24 12:41:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "special".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('special')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/index.php?r=special
+HTTP_REFERER=http://localhost/cmsspirit/index.php
+---
+2014/02/24 17:00:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "page/show".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('page/show')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/index.php?r=page/show&name=about
+HTTP_REFERER=http://localhost/cmsspirit/index.php
+---
+2014/02/24 17:06:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "page/show".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('page/show')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/index.php?r=page/show&name=about
+HTTP_REFERER=http://localhost/cmsspirit/index.php
+---
