@@ -1,6 +1,15 @@
 <!DOCTYPE HTML>
 <html>
 
+<!-- THE TOP CONTAINER -->
+<div id="top-container">
+  <div id="top">
+	<div id="logo"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/logo.png" ></div>
+	<div id="top-right"><p>中文 |English</p></div>
+	<div class="clear"></div>
+  </div>
+</div>
+
 <!-- THE NAVBAR -->
 <div class="navbar-wrapper">
 	<div class="container">
@@ -19,6 +28,7 @@
                 	<li class="active"><a href="<?php echo Yii::app()->homeUrl?>">Home</a></li>
 	                
 	                <?php $catalog = Catalog::model()->findAll(new CDbCriteria)?>
+	                
 					<?php foreach($catalog as $key=>$model):?>
 						<?php if($model['parent_id'] == 0):?>
 						<li class="dropdown">

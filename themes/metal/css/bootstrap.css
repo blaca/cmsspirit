@@ -893,11 +893,6 @@ dd {
   margin-left: 180px;
 }
 
-
-.container > hr {
-  margin: 60px 0;
-}
-
 hr {
   margin: 20px 0;
   border: 0;
@@ -5981,8 +5976,9 @@ a.badge:focus {
 }
 
 .carousel-inner {
-  width: 1170;
-  padding-left:100px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .carousel-inner > .item {
@@ -5998,7 +5994,6 @@ a.badge:focus {
 .carousel-inner > .item > a > img {
   display: block;
   line-height: 1;
-  height: 272px;
 }
 
 .carousel-inner > .active,
@@ -6042,7 +6037,7 @@ a.badge:focus {
 .carousel-control {
   position: absolute;
   top: 40%;
-  left: 105px;
+  left: 15px;
   width: 40px;
   height: 40px;
   margin-top: -20px;
@@ -6061,7 +6056,7 @@ a.badge:focus {
 }
 
 .carousel-control.right {
-  right: 105px;
+  right: 15px;
   left: auto;
 }
 
@@ -6170,23 +6165,3 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
-
-a:hover.move {
-	background-position: 100% -44px; 
-}
-.date, .author { 
-	margin-left: 5px; 
-	display: block; 
-	float: right; 
-	font-size: 12px; 
-	overflow: hidden; 
-	text-align: right;
-	color: #999; 
-}
-.wrap { margin: 0 auto; width: 960px; }
-.floatL { float: left; }
-.floatR { float: right; }
-.title, .title a { color: #3184db; }
-
-.logo { background: url(../img/logo.png) no-repeat; height: 90px; width: 270px; }
-.logo h1 { display: none; }
