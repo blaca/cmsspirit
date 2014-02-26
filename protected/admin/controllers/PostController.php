@@ -114,12 +114,13 @@ class PostController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['Post']))
 		{
-			$model->attributes=$_POST['Post'];
-			if($model->save())
+			$model->attributes=$_POST['Post'];			
+			if($model->save()) {
+								
 				$this->redirect(array('show','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(
@@ -142,13 +143,42 @@ class PostController extends Controller
 		if(isset($_POST['Post']))
 		{
 			$model->attributes=$_POST['Post'];
-			if($model->save())
+			
+			if($model->save()) {
+				
+				$this->insertTags($model);
+					
 				$this->redirect(array('show','id'=>$model->id));
+			}
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
 		));
+	}
+	
+	/**
+	 * 
+	 * @param unknown $model
+	 */
+	protected function insertTags($model)
+	{
+		// Save the tags into Tag table.
+		if ($model->tags !== null) {
+			$tagVars = explode(",", $model->tags);
+				
+			$tag = new Tag();
+			$criteria=new CDbCriteria;
+			foreach ($tagVars as $tagItem ) {
+				$criteria->condition = " tag_name = \"$tagItem\"";
+				$record = Tag::model()->find($criteria);
+		
+				if ($record != null) {
+					// update the tag table
+					$postid = $record->post_id;
+				}
+			}
+		}
 	}
 
 	/**

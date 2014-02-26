@@ -7,23 +7,21 @@
 	<title> <?php echo Yii::app()->params['site_name']?></title>
 	<meta name="generator" content="CMS Spirit" />
 	<meta name="author" content= <?php echo Yii::app()->params['site_author']?> />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap-responsive.css" />
 	<?php Yii::app()->clientScript->registerCoreScript('jquery',CClientScript::POS_END); ?>
 </head>
 
 <body>
-
-	<div class="container">
-	
 	<?php require_once 'head.php';?>
-
-    <?php echo $content; ?>
-    
-    <div class="clear"></div>
-    
-    <hr>
-    
+	
+	<div class="container">
+	    <?php echo $content; ?>    
+	    <div class="clear"></div>   
+	</div> <!-- Container -->
+	
+	<hr>
+	
 	<div id="footer">
 		<div class="wrap clear">
 			<div class="act">
@@ -34,7 +32,6 @@
 		</div>
 	</div><!-- footer -->
     
-    </div> <!-- Container -->
 	
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery/jquery-1.7.1.min.js"></script>

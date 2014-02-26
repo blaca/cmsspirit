@@ -38,8 +38,7 @@
 	  		<!--/Tags-->
 	  		
 	  		<!-- Next Post -->
-		    <div class="preNext clear" > <em class="floatL">Previous:
-			
+		    <div class="preNext clear" > <em class="floatL">Previous:			
 		    </div>
 	  		
 	  		<!-- /Next Post -->

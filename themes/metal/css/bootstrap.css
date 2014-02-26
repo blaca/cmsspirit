@@ -632,8 +632,8 @@ a:focus {
 }
 
 .container-fluid {
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 1px;
+  padding-left: 1px;
   *zoom: 1;
 }
 
@@ -1391,7 +1391,7 @@ textarea.span5,
 input.span4,
 textarea.span4,
 .uneditable-input.span4 {
-  width: 286px;
+  width: 266px;
 }
 
 input.span3,
@@ -4372,7 +4372,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-inner {
   min-height: 40px;
   padding-right: 20px;
-  padding-left: 20px;
+  padding-left: 140px;
   background-color: #fafafa;
   background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
@@ -6165,3 +6165,27 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
+
+/* Container */
+#top-container{ background:url(../img/pattern.png) repeat #181818;height:72px}
+#top-container, #nav-container, #content-container, #footer-container{width:auto; clear:both} 
+#top{width:1030px; margin:0 auto;style="height:32px;"}
+
+/* TOP AREA & MENU
+-------------------------------------------------------------- */
+#top{ padding:20px 0px;  }
+#logo{float:left}
+#logo h1, #logo h1 a, #logo h1 a:visited, #logo .desc{color:#fff;}
+#logo h1 a:hover{text-decoration:none;}
+#logo h1{margin:8px 0 0 0}
+#top-right{ float:right; font-family:TitilliumText22LLight;}
+
+/* FOOTER
+-------------------------------------------------------------- */
+#footer { border-top: 1px solid #E1E1E1; background-color: #333; }
+.split { margin: 0 5px; color: #CCC; }
+#footer .split { color: #666; }
+#footer { padding: 10px 0 50px; border-top: 1px solid #F3F3F3; line-height: 1.8; color: #666; }
+#footer .act { text-align: center; }
+#footer, #footer a { color: #CCC; }
+#footer .act img { vertical-align: middle; }

@@ -6,13 +6,10 @@
  * The followings are the available columns in table 'sp_post':
  * @property string $id
  * @property string $user_id
- * @property string $nickname
  * @property string $author
  * @property string $title
  * @property string $title_second
- * @property string $title_alias
  * @property string $title_style
- * @property string $title_style_serialize
  * @property string $html_path
  * @property string $html_file
  * @property string $template
@@ -36,7 +33,6 @@
  * @property string $favorite_count
  * @property string $attention_count
  * @property string $top_line
- * @property string $last_update_time
  * @property string $reply_count
  * @property string $reply_allow
  * @property string $sort_desc
@@ -63,19 +59,17 @@ class Post extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, content', 'required'),
+			array('title', 'required'),
 			array('catalog_id, special_id', 'numerical', 'integerOnly'=>true),
-			array('user_id, view_count, favorite_count, attention_count, last_update_time, reply_count, sort_desc', 'length', 'max'=>10),
-			array('nickname', 'length', 'max'=>30),
+			array('user_id, view_count, favorite_count, attention_count, reply_count, sort_desc', 'length', 'max'=>10),
 			array('author, html_path, html_file, copy_from, acl', 'length', 'max'=>100),
-			array('title, title_second, title_style, title_style_serialize, seo_title, seo_keywords, copy_url, redirect_url, tags, attach_file, attach_thumb', 'length', 'max'=>255),
-			array('title_alias', 'length', 'max'=>50),
+			array('title, title_second, title_style, seo_title, seo_keywords, copy_url, redirect_url, tags, attach_file, attach_thumb', 'length', 'max'=>255),
 			array('template', 'length', 'max'=>60),
 			array('commend, attach_status, top_line, reply_allow, status_is', 'length', 'max'=>1),
-			array('intro, image_list, seo_description, create_time, update_time', 'safe'),
+			array('intro, image_list, seo_description, content, create_time, update_time', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user_id, nickname, author, title, title_second, title_alias, title_style, title_style_serialize, html_path, html_file, template, catalog_id, special_id, intro, image_list, seo_title, seo_description, seo_keywords, content, copy_from, copy_url, redirect_url, tags, view_count, commend, attach_status, attach_file, attach_thumb, favorite_count, attention_count, top_line, last_update_time, reply_count, reply_allow, sort_desc, acl, status_is, create_time, update_time', 'safe', 'on'=>'search'),
+			array('id, user_id, author, title, title_second, title_style, html_path, html_file, template, catalog_id, special_id, intro, image_list, seo_title, seo_description, seo_keywords, content, copy_from, copy_url, redirect_url, tags, view_count, commend, attach_status, attach_file, attach_thumb, favorite_count, attention_count, top_line, reply_count, reply_allow, sort_desc, acl, status_is, create_time, update_time', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -98,13 +92,10 @@ class Post extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'user_id' => 'User',
-			'nickname' => 'Nickname',
 			'author' => 'Author',
 			'title' => 'Title',
 			'title_second' => 'Title Second',
-			'title_alias' => 'Title Alias',
 			'title_style' => 'Title Style',
-			'title_style_serialize' => 'Title Style Serialize',
 			'html_path' => 'Html Path',
 			'html_file' => 'Html File',
 			'template' => 'Template',
@@ -120,7 +111,7 @@ class Post extends CActiveRecord
 			'copy_url' => 'Copy Url',
 			'redirect_url' => 'Redirect Url',
 			'tags' => 'Tags',
-			'view_count' => 'View',
+			'view_count' => 'View Count',
 			'commend' => 'Commend',
 			'attach_status' => 'Attach Status',
 			'attach_file' => 'Attach File',
@@ -128,7 +119,6 @@ class Post extends CActiveRecord
 			'favorite_count' => 'Favorite Count',
 			'attention_count' => 'Attention Count',
 			'top_line' => 'Top Line',
-			'last_update_time' => 'Last Update Time',
 			'reply_count' => 'Reply Count',
 			'reply_allow' => 'Reply Allow',
 			'sort_desc' => 'Sort Desc',
@@ -159,13 +149,10 @@ class Post extends CActiveRecord
 
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('user_id',$this->user_id,true);
-		$criteria->compare('nickname',$this->nickname,true);
 		$criteria->compare('author',$this->author,true);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('title_second',$this->title_second,true);
-		$criteria->compare('title_alias',$this->title_alias,true);
 		$criteria->compare('title_style',$this->title_style,true);
-		$criteria->compare('title_style_serialize',$this->title_style_serialize,true);
 		$criteria->compare('html_path',$this->html_path,true);
 		$criteria->compare('html_file',$this->html_file,true);
 		$criteria->compare('template',$this->template,true);
@@ -189,7 +176,6 @@ class Post extends CActiveRecord
 		$criteria->compare('favorite_count',$this->favorite_count,true);
 		$criteria->compare('attention_count',$this->attention_count,true);
 		$criteria->compare('top_line',$this->top_line,true);
-		$criteria->compare('last_update_time',$this->last_update_time,true);
 		$criteria->compare('reply_count',$this->reply_count,true);
 		$criteria->compare('reply_allow',$this->reply_allow,true);
 		$criteria->compare('sort_desc',$this->sort_desc,true);

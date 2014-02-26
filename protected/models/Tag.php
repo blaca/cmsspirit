@@ -26,8 +26,7 @@ class Tag extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tag_name', 'required'),
-			array('post_id', 'length', 'max'=>10),
+			array('post_id, tag_name', 'required'),
 			array('tag_name', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

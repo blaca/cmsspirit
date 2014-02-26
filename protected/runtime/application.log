@@ -4071,3 +4071,126 @@ Stack trace:
 REQUEST_URI=/cmsspirit/index.php?r=post/index&catalog=industry-news
 HTTP_REFERER=http://localhost/cmsspirit/index.php?r=post/index&catalog=company-news
 ---
+2014/02/25 17:54:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/index')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/index.php?r=post/index&catalog=company-news
+HTTP_REFERER=http://localhost/cmsspirit/index.php
+---
+2014/02/25 17:54:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/index')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/index.php?r=post/index&catalog=industry-news
+HTTP_REFERER=http://localhost/cmsspirit/index.php?r=post/index&catalog=company-news
+---
+2014/02/25 17:56:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('index')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('index')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/index')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/index.php?r=post/index&catalog=company-news
+HTTP_REFERER=http://localhost/cmsspirit/index.php?r=post/show&id=2
+---
+2014/02/26 15:19:58 [error] [php] Use of undefined constant NOW - assumed 'NOW' (C:\wamp\www\cmsspirit\themes\metal\views\site\index.php:57)
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\wamp\www\cmsspirit\protected\components\Controller.php(56): SiteController->renderPartial()
+#2 C:\wamp\www\cmsspirit\protected\controllers\SiteController.php(45): SiteController->render()
+#3 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp\www\cmsspirit\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\wamp\www\cmsspirit\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\wamp\www\cmsspirit\index.php(13): CWebApplication->run()
+REQUEST_URI=/cmsspirit/index.php
+in C:\wamp\www\cmsspirit\themes\metal\views\site\index.php (57)
+in C:\wamp\www\cmsspirit\protected\components\Controller.php (56)
+in C:\wamp\www\cmsspirit\protected\controllers\SiteController.php (45)
+2014/02/26 15:20:08 [error] [php] date() expects at least 1 parameter, 0 given (C:\wamp\www\cmsspirit\themes\metal\views\site\index.php:57)
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 C:\wamp\www\cmsspirit\framework\web\CController.php(869): SiteController->renderFile()
+#2 C:\wamp\www\cmsspirit\protected\components\Controller.php(56): SiteController->renderPartial()
+#3 C:\wamp\www\cmsspirit\protected\controllers\SiteController.php(45): SiteController->render()
+#4 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\wamp\www\cmsspirit\framework\web\CController.php(286): SiteController->runAction()
+#7 C:\wamp\www\cmsspirit\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): SiteController->run()
+#9 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\wamp\www\cmsspirit\index.php(13): CWebApplication->run()
+REQUEST_URI=/cmsspirit/index.php
+in C:\wamp\www\cmsspirit\themes\metal\views\site\index.php (57)
+in C:\wamp\www\cmsspirit\protected\components\Controller.php (56)
+in C:\wamp\www\cmsspirit\protected\controllers\SiteController.php (45)
+2014/02/26 15:35:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "list".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('list')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/index.php/post?r=list
+HTTP_REFERER=http://localhost/cmsspirit/index.php
+---
+2014/02/26 15:37:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "View".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('View')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('View')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('post/View')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/index.php?r=post/View
+---
+2014/02/26 15:44:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "contact".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('contact')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/index.php?r=contact
+HTTP_REFERER=http://localhost/cmsspirit/index.php
+---
+2014/02/26 15:44:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "contact".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('contact')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/index.php?r=contact
+HTTP_REFERER=http://localhost/cmsspirit/index.php
+---
+2014/02/26 15:44:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "service".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('service')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/index.php?r=service
+HTTP_REFERER=http://localhost/cmsspirit/index.php?r=contact
+---
+2014/02/26 15:44:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "special".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('special')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/index.php?r=special
+HTTP_REFERER=http://localhost/cmsspirit/index.php?r=service
+---
