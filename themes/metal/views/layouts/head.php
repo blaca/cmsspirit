@@ -12,7 +12,7 @@
 
 <!-- THE NAVBAR -->
 	<div class="nav-container">
-		<div class="navbar navbar-inverse">
+		<div class="navbar">
 			<div class="navbar-inner">
             	<!-- HOME -->
             	<a class="brand" href="<?php echo Yii::app()->homeUrl?>">Home</a>
