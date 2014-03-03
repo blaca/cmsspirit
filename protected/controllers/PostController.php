@@ -16,8 +16,9 @@ class PostController extends Controller
 	public function actionList()
 	{
 		$post = new Post();
-		$criteria=new CDbCriteria;
 		
+		$criteria=new CDbCriteria;
+		$criteria->order = "id desc";
 		$post = Post::model()->findAll($criteria);
 		
 		$dataProvider = array(

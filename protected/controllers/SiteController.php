@@ -35,6 +35,7 @@ class SiteController extends Controller
 		$catalog = $model->findAll($criteria);
 		
 		$criteria->limit = 10;
+		$criteria->order = "id desc";
 		$post = Post::model()->findAll($criteria);
 		
 		$dataProvider = array(

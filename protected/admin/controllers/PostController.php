@@ -7,8 +7,15 @@ class PostController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $defaultAction = "admin";
-	
-	
+	/**
+	 * the split character.
+	 * @var unknown
+	 */
+	protected $comma = ",";	
+	/**
+	 * 
+	 * @var int
+	 */
 	const DEFAULT_PAGE_SIZE=10;
 	/**
 	 * @var The title to display the artical
@@ -118,7 +125,8 @@ class PostController extends Controller
 		{
 			$model->attributes=$_POST['Post'];			
 			if($model->save()) {
-								
+				$this->insertTags($model);
+				
 				$this->redirect(array('show','id'=>$model->id));
 			}
 		}
@@ -144,8 +152,7 @@ class PostController extends Controller
 		{
 			$model->attributes=$_POST['Post'];
 			
-			if($model->save()) {
-				
+			if($model->save()) {				
 				$this->insertTags($model);
 					
 				$this->redirect(array('show','id'=>$model->id));
@@ -158,24 +165,86 @@ class PostController extends Controller
 	}
 	
 	/**
-	 * 
-	 * @param unknown $model
+	 * inset the post-id to tag table.
+	 * @param Post $model
 	 */
 	protected function insertTags($model)
 	{
 		// Save the tags into Tag table.
 		if ($model->tags !== null) {
-			$tagVars = explode(",", $model->tags);
-				
+			$tagVars = explode($this->comma, $model->tags);
+			
 			$tag = new Tag();
 			$criteria=new CDbCriteria;
+			
 			foreach ($tagVars as $tagItem ) {
+				// parse ecah tag, add the each tag_name and it's post_id
+				// to the db.
 				$criteria->condition = " tag_name = \"$tagItem\"";
-				$record = Tag::model()->find($criteria);
+				$tagRecord = $tag->find($criteria);
 		
-				if ($record != null) {
-					// update the tag table
-					$postid = $record->post_id;
+				// if this record exist, update this record.
+				if ($tagRecord !== null) {
+					// already have post-id recored. update it.
+					if ($tagRecord->post_id !== "") {
+						$post_ids = explode($this->comma, $tagRecord->post_id);
+						
+						foreach ($post_ids as $var) {
+							if ($var != $model->id) {
+								$tagRecord->post_id = $tagRecord->post_id.$this->comma.$model->id;
+								
+								// write the new $postid to the db.
+								$tagRecord->update();
+							}
+						}
+					} else {
+						$tagRecord->post_id = $model->id;
+						$tagRecord->update();
+					}					
+				} else {
+					// add new record.
+					$tag = new Tag();
+					$tag->post_id = $model->id;
+					$tag->tag_name = $tagItem;
+					$tag->save();
+				}
+			}						
+		}
+	}
+	
+	/**
+	 * Delete the releated tags from Tag table.
+	 * @param Post $model
+	 */
+	protected function deleteTags($model)
+	{
+		if ($model->tags != null) {
+			$tagVars = explode($this->comma, $model->tags);
+			
+			$tag = new Tag();
+			$criteria=new CDbCriteria;
+			
+			foreach ($tagVars as $tagItem ) {
+				// search in the db, delete the tag.
+				$criteria->condition = " tag_name = \"$tagItem\"";
+				$tagRecord = $tag->find($criteria);
+				
+				// find this tagRecord, delete it's post_id if have multi-article
+				// related. delete this record if have only one-article related.
+				if ($tagRecord !== null) {
+					$post_ids = explode($this->comma, $tagRecord->post_id);
+					
+					if (count($post_ids) == 1) {
+						// delete the total record.
+						$tagRecord->delete();
+					} else if (count($post_ids) > 1) {
+						// delete the post_id.
+						foreach ($post_ids as $var) {
+							if ($var == $model->id) {
+								
+							}
+						}
+					}
 				}
 			}
 		}
@@ -189,6 +258,8 @@ class PostController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
+		
+		$this->delteTags();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
