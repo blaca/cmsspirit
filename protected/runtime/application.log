@@ -4621,3 +4621,30 @@ Stack trace:
 REQUEST_URI=/cmsspirit/index.php?r=contact
 HTTP_REFERER=http://localhost/cmsspirit/index.php
 ---
+2014/03/03 12:54:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "special".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('special')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/index.php?r=special
+HTTP_REFERER=http://localhost/cmsspirit/index.php
+---
+2014/03/03 12:54:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "special".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('special')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/index.php?r=special
+HTTP_REFERER=http://localhost/cmsspirit/index.php?r=special
+---
+2014/03/03 12:55:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "special".' in C:\wamp\www\cmsspirit\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('special')
+#1 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\cmsspirit\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/cmsspirit/index.php?r=special
+HTTP_REFERER=http://localhost/cmsspirit/index.php?r=special
+---

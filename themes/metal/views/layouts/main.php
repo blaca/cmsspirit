@@ -8,7 +8,6 @@
 	<meta name="generator" content="CMS Spirit" />
 	<meta name="author" content= <?php echo Yii::app()->params['site_author']?> />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap-responsive.css" />
 	<?php Yii::app()->clientScript->registerCoreScript('jquery',CClientScript::POS_END); ?>
 </head>

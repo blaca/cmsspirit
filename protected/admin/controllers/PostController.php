@@ -239,12 +239,24 @@ class PostController extends Controller
 						$tagRecord->delete();
 					} else if (count($post_ids) > 1) {
 						// delete the post_id.
+						$index = 0;
 						foreach ($post_ids as $var) {
+							$index ++;
+							
 							if ($var == $model->id) {
-								
+								array_splice ($post_ids[$var], $index, 1);
 							}
 						}
+						
+						// rewrite the ids;
+						foreach ($post_ids as $var) {
+							$target_ids += $var.$comma;
+						}
 					}
+					
+					// update to db.
+					$tagRecord->post_id = $target_ids;
+					$tagRecord->update();
 				}
 			}
 		}

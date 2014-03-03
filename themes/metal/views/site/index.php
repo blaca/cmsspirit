@@ -19,7 +19,7 @@
 		    <div class="container">
 			  <div class="carousel-caption">
 			    <p class="lead">Spirit CMS v1.0.0 is going to release, want some suprise?<p>
-			    <a class="btn btn-large btn-info" href="#">Try it now</a>
+			    <a class="btn btn-large btn-primary" href="#">Try it now</a>
 			  </div>
 		    </div>
 		  </div>
@@ -29,7 +29,7 @@
 		  	  <div class="carousel-caption">
 		        <h2>Another example headline.</h2>
 		        <p class="lead">Cras justo odio, .</p>
-		        <a class="btn btn-large btn-info" href="#">Learn more</a>
+		        <a class="btn btn-large btn-primary" href="#">Learn more</a>
 		      </div>
 	        </div>
 	      </div>
@@ -39,7 +39,7 @@
 		      <div class="carousel-caption">
 			  	<h1>One more for good measure.</h1>
 			  	<p class="lead">egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-			  	<a class="btn btn-large btn-info" href="#">Browse gallery</a>
+			  	<a class="btn btn-large btn-primary" href="#">Browse gallery</a>
 		      </div>
 		    </div>
 		  </div>
@@ -50,14 +50,14 @@
 	</div>
     <!-- Notice area -->
     <div class="span3">
-      <div class="portlet">
-        <div class="portlet-title">
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <div class="caption"><i class="icon-bell"></i> Notifications</div>
           <div class="actions">
             <a href="index.php">more...</a>
           </div>
         </div>
-        <div class="portlet-notification">
+        <div class="panel-notification">
           <ul>
             <li>The SpiritCMS v1.0.0 released. Please visit <a href="http://www.github.com">github.com</a> for download. <?php echo date("m-d")?></li>
             <li>The SpiritCMS v1.1.0 released. <a href="http://www.spiritcms.org">spiritcms</a> for download.<?php echo date("m-d")?></li>
@@ -75,15 +75,15 @@
 
 <div class="row-fluid">
   <div class="span4">
-    <div class="portlet">
-      <div class="portlet-title">
+    <div class="panel panel-default">
+      <div class="panel-heading">
         <div class="caption"><i class="icon-home"></i> ABOUT</div>
         <div class="actions">
           <a href="index.php">more...</a>
         </div>
       </div>
-      <div class="portlet-body">
-        <p> SpiritCMS is a fast, safe CMS written by php. it's simple but with full features, ease to extend to meet your needs, You are free to use this software, Please contact us if you want some support.</p>
+      <div class="panel-body">
+        <p> <b>SpiritCMS</b> is a fast, safe CMS written by php. it's simple but with full features, ease to extend to meet your needs, You are free to use this software, Please contact us if you want some support.</p>
 	    <ul>
 	      <li><i class="icon-map-marker"></i> Pudong New District, Shanghai</li>
 	      <li><i class="icon-envelope"></i> menggangcsu@gmail.com</li>
@@ -93,14 +93,14 @@
     </div>
   </div>
   <div class="span4">
-    <div class="portlet">
-      <div class="portlet-title">
+    <div class="panel panel-default">
+      <div class="panel-heading">
         <div class="caption"><i class="icon-th-list"></i> FEATURES</div>
         <div class="actions">
           <a href="index.php">more...</a>
         </div>
       </div>
-      <div class="portlet-body">
+      <div class="panel-body">
         <ul>
 	      <li>SIMPLE</li>
 	      <li>SAFE</li>
@@ -110,14 +110,14 @@
     </div>  
   </div>
   <div class="span4">
-    <div class="portlet">
-      <div class="portlet-title">
+    <div class="panel panel-default">
+      <div class="panel-heading">
         <div class="caption"><i class="icon-edit"></i> NEWS</div>
         <div class="actions">
           <a href="index.php?r=post/list">more...</a>
         </div>
       </div>
-      <div class="portlet-body">
+      <div class="panel-body">
         <ul>
 	  	<?php foreach($post as $key=>$value):?>
 	  	<li>
