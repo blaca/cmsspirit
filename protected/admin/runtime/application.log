@@ -2502,3 +2502,36 @@ Stack trace:
 REQUEST_URI=/cmsspirit/admin.php?r=post/update&id=17
 HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=post/update&id=17
 ---
+2014/03/04 01:30:41 [error] [exception.CException] exception 'CException' with message 'Property "CatalogController.menu" is read only.' in C:\wamp\www\cmsspirit\framework\base\CComponent.php:170
+Stack trace:
+#0 C:\wamp\www\cmsspirit\protected\admin\views\catalog\update.php(11): CComponent->__set('menu', Array)
+#1 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(126): require('C:\wamp\www\cms...')
+#2 C:\wamp\www\cmsspirit\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\cms...', Array, true)
+#3 C:\wamp\www\cmsspirit\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\cms...', Array, true)
+#4 C:\wamp\www\cmsspirit\protected\components\Controller.php(118): CController->renderPartial('update', Array, true)
+#5 C:\wamp\www\cmsspirit\protected\admin\controllers\CatalogController.php(64): Controller->render('update', Array)
+#6 [internal function]: CatalogController->actionUpdate('1')
+#7 C:\wamp\www\cmsspirit\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(CatalogController), Array)
+#8 C:\wamp\www\cmsspirit\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(CatalogController), Object(ReflectionMethod), Array)
+#9 C:\wamp\www\cmsspirit\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\wamp\www\cmsspirit\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\wamp\www\cmsspirit\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('update')
+#13 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/update')
+#14 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=catalog/update&id=1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=catalog
+---
+2014/03/04 01:30:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "show".' in C:\wamp\www\cmsspirit\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\cmsspirit\framework\web\CController.php(270): CController->missingAction('show')
+#1 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(282): CController->run('show')
+#2 C:\wamp\www\cmsspirit\framework\web\CWebApplication.php(141): CWebApplication->runController('catalog/show')
+#3 C:\wamp\www\cmsspirit\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\cmsspirit\admin.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/cmsspirit/admin.php?r=catalog/show&id=1
+HTTP_REFERER=http://localhost/cmsspirit/admin.php?r=catalog
+---

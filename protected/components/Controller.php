@@ -13,7 +13,7 @@ class Controller extends CController
 	/**
 	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
 	 */
-	public $menu=array();
+	public $mainMenu=array();
 	/**
 	 * @var array the breadcrumbs of the current page. The value of this property will
 	 * be assigned to {@link CBreadcrumbs::links}. Please refer to {@link CBreadcrumbs::links}
@@ -28,6 +28,68 @@ class Controller extends CController
 	 * @var the CMS name
 	 */
 	protected static $SpCMS = 'Spirit CMS';
+	
+	/**
+	 * Declares class-based actions.
+	 */
+	public function actions()
+	{
+		return array(
+				// captcha action renders the CAPTCHA image displayed on the contact page
+				'captcha'=>array(
+						'class'=>'CCaptchaAction',
+						'backColor'=>0xFFFFFF,
+				),
+				// page action renders "static" pages stored under 'protected/views/site/pages'
+				// They can be accessed via: index.php?r=site/page&view=FileName
+				'page'=>array(
+						'class'=>'CViewAction',
+				),
+		);
+	}
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see CController::init()
+	 */
+	public function init()
+	{		
+		$catalog = Catalog::model()->findAll(new CDbCriteria);
+		
+		foreach ($catalog as $key=>$model) {
+			
+			if($model['parent_id'] == 0) {
+				// find it's childs, and push it into an new array;
+				$menuitems = array();
+				
+				foreach ($catalog as $name=>$value) {
+					
+					if ($model['id'] == $value['parent_id']) {						
+						// add it to the single menu.
+						$arr = array($value['catalog_name']=>$value['catalog_name_alias']);
+											
+						array_push($menuitems, $arr);
+					}
+				}
+				
+				$parentMenu = array($model['catalog_name'] => $menuitems);
+				
+				array_push($this->mainMenu, $parentMenu);
+			}
+		}
+
+		// for debug.
+		// print_r($this->mainMenu);
+	}
+	
+	/**
+	 * get the menu in the catalog.
+	 * @return array
+	 */
+	public function getMenu()
+	{
+		return $menu;
+	}
 	
 	/**
 	 * Renders a view with a layout.

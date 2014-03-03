@@ -638,6 +638,7 @@ a:focus {
 }
 
 .container-fluid {
+  height: 316px;
   padding-right: 1px;
   padding-left: 1px;
   *zoom: 1;
@@ -4371,7 +4372,7 @@ input[type="submit"].btn.btn-mini {
 .navbar {
   *position: relative;
   *z-index: 2;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   overflow: visible;
 }
 
@@ -4419,7 +4420,6 @@ input[type="submit"].btn.btn-mini {
   display: block;
   float: left;
   padding: 10px 20px 10px;
-  margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
   color: #777777;
@@ -4534,7 +4534,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar-static-top {
   position: static;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .navbar-static-top .navbar-inner {
@@ -6502,7 +6502,7 @@ a.badge:focus {
 #logo h1, #logo h1 a, #logo h1 a:visited, #logo .desc{color:#fff;}
 #logo h1 a:hover{text-decoration:none;}
 #logo h1{margin:8px 0 0 0}
-#top-right{ float:right; font-family:TitilliumText22LLight;}
+#top-right{ margin-top: 10px;float:right; font-family:TitilliumText22LLight;}
 
 /* FOOTER
 -------------------------------------------------------------- */
