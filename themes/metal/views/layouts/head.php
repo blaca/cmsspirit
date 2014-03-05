@@ -47,7 +47,7 @@
 											
 												<?php 
 													$naviLink = $this->createUrl('post/index',$b).">";
-													echo "<li><a href= $naviLink", $d, "</a></li>";
+													echo "<li><a href= $naviLink", $c, "</a></li>";
 												?>		
 														
 											<?php endforeach;?>

@@ -10,18 +10,30 @@
       <ul class="page-breadcrumb breadcrumb">
 		<li>
 			<i class="icon-home"></i>
-			<a href="index.php">Home</a> > 
+			<a href="index.php">Home</a> <span class="divider">/</span>
 		</li>
 		<li>
 			<a href="">News</a>
 		</li>
 	  </ul>
+	  
+	  <!-- List the article -->
+	  
       <ul>
-		<?php foreach($post as $n=>$model): ?>
-			<li class="post" id="post-<?php echo $model->id;?>">
-				<?php echo CHtml::link( CHtml::label(date('Y-m-d',strtotime($model->create_time)),'',array('class'=>'notice_time'))." - ".$model->title,array('show','id'=>$model->id)); ?>
-			</li>		
-		<?php endforeach; ?>
+      	<?php foreach($post as $n=>$model):?>
+      		<li>
+      		  <h4><small><?php echo CHtml::link($model->title,array('show','id'=>$model->id)); ?></small></h4>
+      		  <p><?php echo $model->intro;?></p>
+      		  <ol class="breadcrumb">
+      		    <li> 
+      		      <i class="icon-calendar"></i><?php echo date('Y/m/d',strtotime($model->create_time)); ?>
+      		      <i class="icon-eye-open"></i><?php echo $model->view_count; ?>
+      		      <i class="icon-comment"></i><?php echo $model->commend; ?>
+      		      <i class="icon-tag"></i><?php echo $model->tags; ?>
+      		    </li>
+      		  </ol>
+      		</li>      	
+      	<?php endforeach;?>
 	  </ul>
 	  
 	  <!-- the Page indicator-->

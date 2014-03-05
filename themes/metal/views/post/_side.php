@@ -1,23 +1,22 @@
-    <div class="span3">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="caption"> Navigation</div>
-        </div>
-        <div class="panel-body">
-      	</div>
+
+<div class="span3">
+	
+  <aside id="sidebar-left" class="sidebar">
+    <div id="post-list-widget" class="widget side-box mt-10 widget-posts">
+      <div class="hd">
+        <span>Recent post</span>
       </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="caption"> Recent Post</div>
-        </div>
-        <div class="panel-body">
-      	</div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="caption"> Recent Comment</div>
-        </div>
-        <div class="panel-body">
-      	</div>
+      <div class="m15 widget-container">
+        <ul>
+          <li>
+            <a href="#">半个月过去了，计划永远赶不上变化</a>
+            <span class="date">2014/02/27</span>
+          </li>
+        </ul>
+        <div class="clear"></div>
       </div>
     </div>
+  
+  </aside>	
+	
+</div>

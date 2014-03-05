@@ -7,7 +7,7 @@
  *
  * Designed and built with all the love in the world by @mdo and @fat.
  */
- 
+
  @import url(../fonts/font.css);
 
 .clearfix {
@@ -229,7 +229,7 @@ body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   padding: 0px !important;
   margin: 0px !important;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 20px;
   color: #333333;
   background-color: #ffffff;
@@ -4421,7 +4421,7 @@ input[type="submit"].btn.btn-mini {
   float: left;
   padding: 10px 20px 10px;
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 500;
   color: #777777;
   text-shadow: 0 1px 0 #ffffff;
 }
@@ -4603,6 +4603,7 @@ input[type="submit"].btn.btn-mini {
   display: block;
   float: left;
   margin: 0 10px 0 0;
+  font-size:16px;
 }
 
 .navbar .nav.pull-right {
@@ -6488,6 +6489,33 @@ a.badge:focus {
   margin: 0;
   margin-top: 2px;
   float: right;
+}
+
+.widget{ clear:both }
+
+.widget-container{clear:both}
+.widget-container a{font-size:inherit}
+.widget-container li{overflow:hidden;padding:0 0 4px 12px;width:98%;background:url(http://www.cmhello.com/wp-content/themes/cmhello/images/sidebar-bullet.png) no-repeat left 8px;line-height:18px}
+.widget-container p{padding-bottom:1em}
+.widget-container a:hover{text-decoration:none}
+.widget-container li span.date{margin:5px 0;color:#AAA;font-size:85%}
+
+.m15{margin:15px}
+.mt10{margin-top:10px}
+.mt20{margin-top:20px}
+.mt40{margin-top:40px}.
+
+.sidebar a{color:#666}
+.sidebar a:hover{color:#08f}
+.side-box{width:100%}
+.side-box .hd{height:35px;width:auto;border-bottom:1px solid #ddd;line-height:35px}
+.side-box .hd span{color:#333;font-size:16px;border-bottom:1px solid #08f;font-weight:normal;padding:7px 15px}
+
+#sidebar-left {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  width: 100%;
 }
 
 /* Container */

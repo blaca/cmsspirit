@@ -34,7 +34,7 @@
     
 	
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery/jquery-1.7.1.min.js"></script>
+	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.8.2.min.js"></script>
 	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-transition.js"></script>
 	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-dropdown.js"></script>
 	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-carousel.js"></script>
