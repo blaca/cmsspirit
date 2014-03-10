@@ -9,23 +9,26 @@ class PostController extends Controller
 	public $defaultAction = "admin";
 	/**
 	 * the split character.
-	 * @var unknown
+	 * @var string
 	 */
 	protected $comma = ",";	
 	/**
-	 * 
-	 * @var int
+	 * the post in each page.
+	 * @var int 
 	 */
-	const DEFAULT_PAGE_SIZE=10;
+	const DEFAULT_PAGE_SIZE = 10;
 	/**
 	 * @var The title to display the artical
 	 */
 	public $_model;
-	
+	/**
+	 * 
+	 * @var array
+	 */
 	public $catalog_list;
 	
 	/**
-	 * (non-PHPdoc)
+	 * init the PostController
 	 * @see CController::init()
 	 */
 	public function init(){

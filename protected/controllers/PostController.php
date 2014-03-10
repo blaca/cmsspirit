@@ -8,7 +8,11 @@ class PostController extends Controller
 	 * @var The title to display the artical
 	 */
 	public $title;
-
+	/**
+	 * the post in each page.
+	 * @var int
+	 */
+	const DEFAULT_PAGE_SIZE = 10;
 
 	/**
 	 * Lists all models.
@@ -18,11 +22,20 @@ class PostController extends Controller
 		$post = new Post();
 		
 		$criteria=new CDbCriteria;
+		
+		$pages = new CPagination(Post::model()->count($criteria));
+		$pages->pageSize = self::DEFAULT_PAGE_SIZE;
+		$pages->applyLimit($criteria);
+		
+		$sort = new CSort('Post');
 		$criteria->order = "id desc";
+		$sort->applyOrder($criteria);
+		
 		$post = Post::model()->findAll($criteria);
 		
 		$dataProvider = array(
-			'post'=>$post
+			'post'=>$post,
+			'pages'=>$pages
 		);
 		
 		$this->render('list', $dataProvider);
@@ -33,9 +46,23 @@ class PostController extends Controller
 	 */
 	public function actionShow( $id )
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+		$post = new Post();		
+		$post = $this->loadModel($id);
+		
+		$criteria = new CDbCriteria;
+		$criteria->condition = "id > $id order by id asc";
+		$preArticle = Post::model()->find($criteria);
+		
+		$criteria->condition = "id < $id order by id desc";
+		$nextArticle = Post::model()->find($criteria);
+						
+		$dataProvider = array(
+  			'post'=>$post,
+			'pre'=>$preArticle,
+			'next'=>$nextArticle
+		);
+		
+		$this->render('view', $dataProvider);
 	}
 
 	/**

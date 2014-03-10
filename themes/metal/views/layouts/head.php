@@ -34,7 +34,7 @@
             					<?php foreach ($menuArray as $key=>$value) : ?>
             					
             						<!-- create the parent menu -->
-            						<a href="<?php echo $this->createUrl('post/index') ?>" 
+            						<a href="<?php echo $this->createUrl('post/list') ?>" 
 										class="dropdown-toggle" data-toggle="dropdown"><?php echo $key;?>
 										<b class="caret"></b>
 									</a>
@@ -46,7 +46,7 @@
 											<?php foreach ($b as $c => $d) :?>
 											
 												<?php 
-													$naviLink = $this->createUrl('post/index',$b).">";
+													$naviLink = $this->createUrl('post/list',$b).">";
 													echo "<li><a href= $naviLink", $c, "</a></li>";
 												?>		
 														

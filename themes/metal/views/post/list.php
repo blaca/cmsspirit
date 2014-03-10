@@ -1,13 +1,8 @@
 
 
 <div class="container-fluid">
-  <div class="row-fluid">
-	<?php require '_side.php';?>
-    
-    <!-- The news area -->
-    <div class="span9">
-      <!-- the breadcrumbs -->
-      <ul class="page-breadcrumb breadcrumb">
+	<!-- the breadcrumbs -->
+    <ul class="page-breadcrumb breadcrumb">
 		<li>
 			<i class="icon-home"></i>
 			<a href="index.php">Home</a> <span class="divider">/</span>
@@ -15,10 +10,16 @@
 		<li>
 			<a href="">News</a>
 		</li>
-	  </ul>
+	</ul>
+
+    <div class="row-fluid">
+  
+	<?php require '_side.php';?>
+	
+    <!-- The news area -->
+    <div class="span9">
 	  
-	  <!-- List the article -->
-	  
+	  <!-- List the article -->	  
       <ul>
       	<?php foreach($post as $n=>$model):?>
       		<li>
@@ -37,7 +38,9 @@
 	  </ul>
 	  
 	  <!-- the Page indicator-->
-		
+	    <?php $this->widget('CLinkPager', array(  
+    	  'pages' => $pages,  
+  		)) ?> 
     </div>
   </div>
 </div>

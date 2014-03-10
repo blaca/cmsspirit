@@ -2,9 +2,29 @@
 <div class="span3">
 	
   <aside id="sidebar-left" class="sidebar">
+  	<!-- The nvai bar -->
+  	<div id="post-list-widget" class="widget side-box mt-10 widget-posts">
+      <div class="hd">
+        <span>Category</span>
+      </div>
+      <div class="m15 widget-container">
+        
+        <ul class="nav">
+        	<a hre="#">Company</a>
+        </ul>
+        
+        <ul class="nav">
+        	<a hre="#">Indestry</a>
+        </ul>
+        
+        <div class="clear"></div>
+      </div>
+    </div>
+  
+  
     <div id="post-list-widget" class="widget side-box mt-10 widget-posts">
       <div class="hd">
-        <span>Recent post</span>
+        <span>Recent posts</span>
       </div>
       <div class="m15 widget-container">
         <ul>
