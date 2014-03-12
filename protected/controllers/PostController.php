@@ -18,10 +18,25 @@ class PostController extends Controller
 	 * Lists all models.
 	 */
 	public function actionList()
-	{
+	{	
 		$post = new Post();
-		
 		$criteria=new CDbCriteria;
+		
+		// fill the catalog
+		if (array_key_exists('catalog', $_GET)) 
+		{
+			$id = $_GET['catalog'];
+						
+			$criteria->condition = " catalog_id = $id";
+		}
+		
+		// fill the tag.
+		if (array_key_exists('tag', $_GET)) 
+		{
+			$tagName = $_GET['tag'];
+			
+			$criteria->condition = " tags like '%$tagName%'";
+		}
 		
 		$pages = new CPagination(Post::model()->count($criteria));
 		$pages->pageSize = self::DEFAULT_PAGE_SIZE;
@@ -48,6 +63,9 @@ class PostController extends Controller
 	{
 		$post = new Post();		
 		$post = $this->loadModel($id);
+		
+		// update the view_count;
+		$this->updateViewCount($id);
 		
 		$criteria = new CDbCriteria;
 		$criteria->condition = "id > $id order by id asc";
@@ -78,6 +96,21 @@ class PostController extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
+	}
+	
+	/**
+	 * Update the post view count.
+	 * @param int $id
+	 */
+	protected function updateViewCount($id)
+	{
+		$model=Post::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		
+		$model->view_count;
+		
+		$model->updateCounters(array ('view_count' => 1 ), 'id=:id', array ('id' => $id ));
 	}
 
 	/**

@@ -66,7 +66,7 @@ class Controller extends CController
 					
 					if ($model['id'] == $value['parent_id']) {						
 						// add it to the single menu.
-						$arr = array($value['catalog_name']=>$value['catalog_name_alias']);
+						$arr = array($value['catalog_name']=>$value['id']);
 											
 						array_push($menuitems, $arr);
 					}

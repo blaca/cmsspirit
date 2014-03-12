@@ -46,7 +46,8 @@
 											<?php foreach ($b as $c => $d) :?>
 											
 												<?php 
-													$naviLink = $this->createUrl('post/list',$b).">";
+													$arr = array("catalog" => $d);
+													$naviLink = $this->createUrl('post/list',$arr).">";
 													echo "<li><a href= $naviLink", $c, "</a></li>";
 												?>		
 														

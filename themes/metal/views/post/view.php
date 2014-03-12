@@ -45,7 +45,7 @@
         <ul>
 		  <?php foreach($tags as $tag):?>
 		    <i class="icon-tag"></i>
-		    <a href="<?php echo $this->createUrl('tag/post',array('name'=>urlencode($tag))) ?>" target="_blank" title="<?php echo $tag?>"><?php echo $tag?></a>
+		    <a href="index.php?r=post/list&tag=<?php echo $tag?>"><?php echo $tag?></a>
 		  <?php endforeach?>
         </ul>
       	</div>
