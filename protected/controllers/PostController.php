@@ -12,8 +12,34 @@ class PostController extends Controller
 	 * the post in each page.
 	 * @var int
 	 */
-	const DEFAULT_PAGE_SIZE = 10;
-
+	const DEFAULT_PAGE_SIZE = 10;		
+	/**
+	 * @var array Post. list the recent post.
+	 */
+	public $recentPost=array();
+	/**
+	 * @var most popular Post. list the recent most visited.
+	*/
+	public $mostPopular=array();
+	
+	
+	public function init()
+	{
+		parent::init();
+		
+		// init the recent post.
+		$post = new Post();
+		$criteria=new CDbCriteria;
+		$criteria->order = "id desc";
+		$criteria->limit = 5;
+		$post = Post::model()->findAll($criteria);
+		
+		$this->recentPost = $post;
+		
+		// init the most popular.
+		
+	}
+		
 	/**
 	 * Lists all models.
 	 */

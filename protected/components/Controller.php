@@ -54,6 +54,7 @@ class Controller extends CController
 	 */
 	public function init()
 	{		
+		// init the main menu.
 		$catalog = Catalog::model()->findAll(new CDbCriteria);
 		
 		foreach ($catalog as $key=>$model) {

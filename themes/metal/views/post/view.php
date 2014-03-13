@@ -33,42 +33,39 @@
         </table>
 	  </div>
 	  
-	  <hr>
-	  
 	  <!--Tags-->
       <?php if($post->tags):?>
         <?php 
   			$tags = @explode(',', $post->tags);
   		?>
-  		<div class="postTags clear">
-        <p class="tagsTitle floatL">Tags:</p>
-        <ul>
+  		<div class="breadcrumb">
+        Tags:
 		  <?php foreach($tags as $tag):?>
 		    <i class="icon-tag"></i>
 		    <a href="index.php?r=post/list&tag=<?php echo $tag?>"><?php echo $tag?></a>
 		  <?php endforeach?>
-        </ul>
       	</div>
       	<?php endif?>
       	
       	<hr>
       	
       	<!-- Pre Post -->
-      	<p>Pre article</p>
+      	<p>Pre Article:
       	<?php if ($pre != null):?>
-      		<a href="index.php?r=post/show&id=<?php echo $pre->id?>"><?php echo $pre->title;?></a>;
+      		<a href="index.php?r=post/show&id=<?php echo $pre->id?>"><?php echo $pre->title;?></a>
       	<?php else:?>
-      		<p>None</p>
+      		None
       	<?php endif;?>
+      	</p>
       		
       	<!-- Next Post -->
-      	<p>Next article</p>
+      	<p>Next Article:
       	<?php if ($next != null):?>
       		<a href="index.php?r=post/show&id=<?php echo $next->id?>"><?php echo $next->title;?></a>
       	<?php else:?>
-      		<p>None</p>
+      		None
       	<?php endif;?>
-      	
+      	</p>
       	<hr>
       	
       	<!-- Related article -->

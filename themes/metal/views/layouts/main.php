@@ -34,13 +34,10 @@
     
 	
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.8.2.min.js"></script>
-	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-transition.js"></script>
-	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-dropdown.js"></script>
-	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-carousel.js"></script>
-	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-scrollspy.js"></script>	
-	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-typeahead.js"></script>
-	<script>
+	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script>
+	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-hover-dropdown.js"></script>
+
+ 	<script>
       !function ($) {
         $(function(){
           // carousel demo
@@ -48,6 +45,12 @@
         })
       }(window.jQuery)
     </script>
-    <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/holder.js"></script>	
+    
+    <script>
+    // very simple to use!
+    $(document).ready(function() {
+      $('.js-activated').dropdownHover().dropdown();
+    });
+  	</script>
 </body>
 </html>

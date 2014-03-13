@@ -61,8 +61,6 @@
           <ul>
             <li>The SpiritCMS v1.0.0 released. Please visit <a href="http://www.github.com">github.com</a> for download. <?php echo date("m-d")?></li>
             <li>The SpiritCMS v1.1.0 released. <a href="http://www.spiritcms.org">spiritcms</a> for download.<?php echo date("m-d")?></li>
-            <li>The SpiritCMS v1.1.0 released. Have a look. <?php echo date("m-d")?></li>
-            <li>The SpiritCMS v1.1.0 released. Have a look. <?php echo date("m-d")?></li>
             <li><a href="index.php?r=users">The SpiritCMS v2.1.0 released.</a></li>
           </ul>
       	</div>

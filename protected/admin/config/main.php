@@ -15,7 +15,9 @@ return array(
 	'name'=>'CMS Spirit',
 	'sourceLanguage'=>'us_en',
 	'timeZone' => 'Asia/Shanghai',
-		
+	
+	// the default theme
+	'theme'=>'default',		
 		
 	'controllerPath' => $backend.'/controllers',
 	'viewPath' => $backend.'/views',

@@ -35,7 +35,7 @@
             					
             						<!-- create the parent menu -->
             						<a href="<?php echo $this->createUrl('post/list') ?>" 
-										class="dropdown-toggle" data-toggle="dropdown"><?php echo $key;?>
+										class="dropdown-toggle js-activated" data-toggle="dropdown"><?php echo $key;?>
 										<b class="caret"></b>
 									</a>
 									
