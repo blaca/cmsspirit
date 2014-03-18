@@ -10,17 +10,17 @@ $backend=dirname(dirname(__FILE__));
 $frontend=dirname($backend);
 Yii::setPathOfAlias('backend', $backend);
 
+$themePath="/themes/default";
+Yii::setPathOfAlias('themePath', $themePath);
+
 return array(
 	'basePath' => $frontend,
 	'name'=>'CMS Spirit',
 	'sourceLanguage'=>'us_en',
 	'timeZone' => 'Asia/Shanghai',
-	
-	// the default theme
-	'theme'=>'default',		
 		
 	'controllerPath' => $backend.'/controllers',
-	'viewPath' => $backend.'/views',
+	'viewPath' => $backend.$themePath.'/views',
 	'runtimePath' => $backend.'/runtime',
 
 	// autoloading model and component classes
@@ -166,5 +166,6 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'menggangcsu@gmail.com',
 		'cms_version' 	=> 'CMS Spirit v1.0.0',
+		'custom_theme' => $themePath
 	),
 );
