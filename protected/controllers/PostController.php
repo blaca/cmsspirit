@@ -37,7 +37,14 @@ class PostController extends Controller
 		$this->recentPost = $post;
 		
 		// init the most popular.
+		$popular = new Post();
+		$criteria = new CDbCriteria;
+		$criteria->condition = " DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(create_time)";
+		$criteria->order = " view_count desc";
+		$criteria->limit = 5;
+		$popular = Post::model()->findAll($criteria);
 		
+		$this->mostPopular = $popular;
 	}
 		
 	/**

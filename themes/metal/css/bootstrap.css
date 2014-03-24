@@ -6391,96 +6391,6 @@ a.badge:focus {
   border-bottom-color: #dddddd;
 }
 
-.panel-primary {
-  border-color: #428bca;
-}
-
-.panel-primary > .panel-heading {
-  color: #ffffff;
-  background-color: #428bca;
-  border-color: #428bca;
-}
-
-.panel-primary > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #428bca;
-}
-
-.panel-primary > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #428bca;
-}
-
-.panel-success {
-  border-color: #d6e9c6;
-}
-
-.panel-success > .panel-heading {
-  color: #3c763d;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-}
-
-.panel-success > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #d6e9c6;
-}
-
-.panel-success > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #d6e9c6;
-}
-
-.panel-warning {
-  border-color: #faebcc;
-}
-
-.panel-warning > .panel-heading {
-  color: #8a6d3b;
-  background-color: #fcf8e3;
-  border-color: #faebcc;
-}
-
-.panel-warning > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #faebcc;
-}
-
-.panel-warning > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #faebcc;
-}
-
-.panel-danger {
-  border-color: #ebccd1;
-}
-
-.panel-danger > .panel-heading {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
-}
-
-.panel-danger > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #ebccd1;
-}
-
-.panel-danger > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #ebccd1;
-}
-
-.panel-info {
-  border-color: #bce8f1;
-}
-
-.panel-info > .panel-heading {
-  color: #31708f;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-}
-
-.panel-info > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #bce8f1;
-}
-
-.panel-info > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #bce8f1;
-}
-
 .panel-default > .panel-heading  > .tools,
 .panel-default > .panel-heading  > .actions
  {
@@ -6490,15 +6400,6 @@ a.badge:focus {
   margin-top: 2px;
   float: right;
 }
-
-.widget{ clear:both }
-
-.widget-container{clear:both}
-.widget-container a{font-size:inherit}
-.widget-container li{overflow:hidden;padding:0 0 4px 12px;width:98%;background:url(http://www.cmhello.com/wp-content/themes/cmhello/images/sidebar-bullet.png) no-repeat left 8px;line-height:18px}
-.widget-container p{padding-bottom:1em}
-.widget-container a:hover{text-decoration:none}
-.widget-container li span.date{margin:5px 0;color:#AAA;font-size:85%}
 
 .m15{margin:15px}
 .mt10{margin-top:10px}

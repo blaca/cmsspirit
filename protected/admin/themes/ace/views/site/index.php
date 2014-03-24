@@ -3,9 +3,11 @@
 	<br/>
 	
 	<h3>
-		<?php echo "Welcome ".(Yii::app()->user->username)?>
+		<?php echo "Here's welcome information."?>
 	</h3>
-	
+	<h3>
+		<?php echo "And here's memo"?>
+	</h3>
 	<br/>
 	
 	<h3>System Infomation</h3>

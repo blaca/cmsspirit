@@ -5,7 +5,6 @@
 		<tr>
 			<th><?php echo $sort->link('id'); ?></th>
 		    <th><?php echo $sort->link('catalog_name'); ?></th>
-		    <th><?php echo $sort->link('catalog_name_second'); ?></th>
 		    <th><?php echo $sort->link('catalog_name_alias'); ?></th>
 		    <th><?php echo $sort->link('create_time'); ?></th>
 			<th>Actions</th>
@@ -17,7 +16,6 @@
 			<tr class="<?php echo $n%2?'even':'odd';?>">
 				<td><?php echo CHtml::link($model->id,array('show','id'=>$model->id)); ?></td>
 				<td><?php echo CHtml::encode($model->catalog_name); ?></td>
-				<td><?php echo CHtml::encode($model->catalog_name_second); ?></td>
 				<td><?php echo CHtml::encode($model->catalog_name_alias); ?></td>
 				<td><?php echo CHtml::encode($model->create_time); ?>
 				

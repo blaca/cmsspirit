@@ -80,12 +80,6 @@
 							0 => array(
 								'text' => CHtml::link('Post List', array('/post/')),
 							),
-							1 => array(
-								'text' => CHtml::link('Comment List', array('/comment/')),
-							),
-							2 => array(
-								'text' => CHtml::link('blocked comment', array('/comment/blocked')),
-							)
 						),
 					);
 				}
@@ -102,12 +96,6 @@
 								'text' => CHtml::link('Site info', array('/')),
 							),
 							1 => array(
-								'text' => CHtml::link('Site Setting', array('/config/')),
-							),
-							2 => array(
-								'text' => CHtml::link('Custom Setting', array('/config/')),
-							),
-							3 => array(
 								'text' => CHtml::link('Catalog Setting', array('/catalog/')),
 							) 
 						),
