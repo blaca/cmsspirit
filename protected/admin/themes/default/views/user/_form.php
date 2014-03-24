@@ -19,62 +19,46 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
+	<div class="simple">
 		<?php echo $form->labelEx($model,'username'); ?>
 		<?php echo $form->textField($model,'username',array('size'=>15,'maxlength'=>15)); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password',array('size'=>32,'maxlength'=>32)); ?>
-		<?php echo $form->error($model,'password'); ?>
-	</div>
-
-	<div class="row">
+	
+	<div class="simple">
 		<?php echo $form->labelEx($model,'realname'); ?>
 		<?php echo $form->textField($model,'realname',array('size'=>16,'maxlength'=>16)); ?>
 		<?php echo $form->error($model,'realname'); ?>
 	</div>
+	
+	<?php if ($model->isNewRecord): ?>
+		<div class="simple">
+			<?php echo $form->labelEx($model,'password'); ?>
+			<?php echo $form->passwordField($model,'password',array('size'=>16,'maxlength'=>256)); ?>
+			<?php echo $form->error($model,'password'); ?>
+		</div>
+		
+		<div class="row">
+			<?php echo $form->label($model,'pwd_repeat'); ?>
+			<?php echo $form->passwordField($model,'pwd_repeat',array('size'=>16,'maxlength'=>256)); ?>
+			<?php echo $form->error($model,'pwd_repeat'); ?>
+		</div>	
+	<?php endif;?>
 
-	<div class="row">
+	<div class="simple">
 		<?php echo $form->labelEx($model,'email'); ?>
 		<?php echo $form->textField($model,'email',array('size'=>32,'maxlength'=>32)); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 
-	<div class="row">
+	<div class="simple">
 		<?php echo $form->labelEx($model,'profile'); ?>
 		<?php echo $form->textArea($model,'profile',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'profile'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'regIp'); ?>
-		<?php echo $form->textField($model,'regIp',array('size'=>15,'maxlength'=>15)); ?>
-		<?php echo $form->error($model,'regIp'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'regTime'); ?>
-		<?php echo $form->textField($model,'regTime'); ?>
-		<?php echo $form->error($model,'regTime'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'lastLoginIp'); ?>
-		<?php echo $form->textField($model,'lastLoginIp',array('size'=>15,'maxlength'=>15)); ?>
-		<?php echo $form->error($model,'lastLoginIp'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'lastLoginTime'); ?>
-		<?php echo $form->textField($model,'lastLoginTime'); ?>
-		<?php echo $form->error($model,'lastLoginTime'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	<div class="action">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Update'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -30,7 +30,7 @@ class Catalog extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('catalog_name', 'required'),
+			array('parent_id, catalog_name', 'required'),
 			array('parent_id', 'length', 'max'=>10),
 			array('catalog_name, catalog_name_alias', 'length', 'max'=>100),
 			array('content, create_time, update_time', 'safe'),
@@ -60,7 +60,7 @@ class Catalog extends CActiveRecord
 			'id' => 'ID',
 			'parent_id' => 'Parent',
 			'catalog_name' => 'Catalog Name',
-			'catalog_name_alias' => 'Catalog Name Alias',
+			'catalog_name_alias' => 'Alias',
 			'content' => 'Content',
 			'create_time' => 'Create Time',
 			'update_time' => 'Update Time',

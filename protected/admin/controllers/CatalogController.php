@@ -10,9 +10,9 @@ class CatalogController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionShow($id)
 	{
-		$this->render('view',array(
+		$this->render('show',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
@@ -56,7 +56,7 @@ class CatalogController extends Controller
 		{
 			$model->attributes=$_POST['Catalog'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('show','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -86,6 +86,7 @@ class CatalogController extends Controller
 		$this->processCommand();
 		
 		$criteria = new CDbCriteria();
+		$criteria->order = "id asc";
 		
 		$pages = new CPagination(Catalog::model()->count($criteria));
 		$pages->applyLimit($criteria);

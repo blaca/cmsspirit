@@ -32,10 +32,12 @@ class UserController extends BaseController
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
+			$model->regIp = $this->get_client_ip();
+			$model->regTime = date('Y-m-d H:i:s', time());
 			if($model->save())
 				$this->redirect(array('show','id'=>$model->userid));
 		}
@@ -56,7 +58,6 @@ class UserController extends BaseController
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
@@ -118,6 +119,20 @@ class UserController extends BaseController
 			// reload the current page to avoid duplicated delete actions
 			$this->refresh();
 		}
+	}
+	
+	protected function get_client_ip()
+	{
+		if ($_SERVER['REMOTE_ADDR']) {
+			$cip = $_SERVER['REMOTE_ADDR'];
+		} elseif (getenv("REMOTE_ADDR")) {
+			$cip = getenv("REMOTE_ADDR");
+		} elseif (getenv("HTTP_CLIENT_IP")) {
+			$cip = getenv("HTTP_CLIENT_IP");
+		} else {
+			$cip = "unknown";
+		}
+		return $cip;
 	}
 	
 	/**

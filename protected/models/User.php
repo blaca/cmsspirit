@@ -16,7 +16,9 @@
  * @property string $lastLoginTime
  */
 class User extends CActiveRecord
-{
+{	
+	public $pwd_repeat;
+	
 	/**
 	 * @return string the associated database table name
 	 */
@@ -33,8 +35,10 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, email, regIp, regTime', 'required'),
+			array('username, password, pwd_repeat, email','required'),
+			array('pwd_repeat', 'compare', 'allowEmpty'=>false, 'compareAttribute'=>'password'),
 			array('username, regIp, lastLoginIp', 'length', 'max'=>15),
+			array('email, username', 'unique'),
 			array('password, email', 'length', 'max'=>32),
 			array('realname', 'length', 'max'=>16),
 			array('profile, lastLoginTime', 'safe'),
@@ -64,6 +68,7 @@ class User extends CActiveRecord
 			'userid' => 'Userid',
 			'username' => 'Username',
 			'password' => 'Password',
+			'pwd_repeat' => 'Password repeat',
 			'realname' => 'Realname',
 			'email' => 'Email',
 			'profile' => 'Profile',

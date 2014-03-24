@@ -59,7 +59,7 @@ The field with<span class="required">*</span> are required
 </div> 
 
 <div class="action">
-	<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Update'); ?>
 </div>
 
 <?php echo CHtml::endForm(); ?>

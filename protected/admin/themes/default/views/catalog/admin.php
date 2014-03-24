@@ -15,7 +15,13 @@
 		<?php foreach($models as $n=>$model): ?>
 			<tr class="<?php echo $n%2?'even':'odd';?>">
 				<td><?php echo CHtml::link($model->id,array('show','id'=>$model->id)); ?></td>
-				<td><?php echo CHtml::encode($model->catalog_name); ?></td>
+				
+				<?php if ($model->parent_id != 0):?>
+					<td><?php echo CHtml::link("- ".($model->catalog_name),array('show','id'=>$model->id)); ?></td>
+				<?php else:?>
+					<td><?php echo CHtml::link($model->catalog_name,array('show','id'=>$model->id)); ?></td>
+				<?php endif;?>
+				
 				<td><?php echo CHtml::encode($model->catalog_name_alias); ?></td>
 				<td><?php echo CHtml::encode($model->create_time); ?>
 				
