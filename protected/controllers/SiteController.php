@@ -3,6 +3,12 @@
 class SiteController extends Controller
 {	
 	/**
+	 * The index page post amount.
+	 * @var unknown
+	 */
+	const DEFAULT_PAGE_SIZE = 3;
+	
+	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
 	 */
@@ -15,7 +21,7 @@ class SiteController extends Controller
 		// find all the menus in the catalog;
 		$catalog = $model->findAll($criteria);
 		
-		$criteria->limit = 10;
+		$criteria->limit = self::DEFAULT_PAGE_SIZE;
 		$criteria->order = "id desc";
 		$post = Post::model()->findAll($criteria);
 		

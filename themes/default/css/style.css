@@ -123,7 +123,6 @@ cite span { color: #000; }
 	width: 280px;
 	height: 30px;
 	margin-top: 30px;
-	background: url(../images/search.png) no-repeat;
 }
 
 #search_box form {
@@ -441,13 +440,13 @@ cite span { color: #000; }
 	width: 240px;
 }
 
-.section_rss_twitter {
+.section_rss_weibo{
 	width: 240px;
 	margin-top: 20px;
 	margin-bottom: 120px;
 }
 
-.rss_twitter a{
+.rss_weibo a{
 	display: block;
 	width: 240px;
 	color: #333;
@@ -458,11 +457,11 @@ cite span { color: #000; }
 	text-decoration: none;
 }
 
-.rss_twitter a:hover {
+.rss_weibo a:hover {
 	text-decoration: none;	
 }
 
-.rss_twitter a span {
+.rss_weibo a span {
 	font-size: 15px;
 	margin-top: 5px;
 	display: block;
@@ -474,9 +473,9 @@ cite span { color: #000; }
 	background: url(../images/rss.png) right bottom no-repeat;
 }
 
-.twitter a{
+.weibo a{
 
-	background: url(../images/twitter.png) right bottom no-repeat;
+	background: url(../images/weibo.png) right bottom no-repeat;
 }
 
 

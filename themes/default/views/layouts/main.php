@@ -68,80 +68,100 @@
     	</div><!-- end of menu -->
         
         <div id="banner">
-            <div id="silder" class="contentslider" style="width: 920px; height: 200px;"><a href="#" class="cs_leftBtn"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/cs_leftImg.png"></a>
+        	<div id="one" class="contentslider">
             	<div class="cs_wrapper">
                 	<div class="cs_slider">
+                	
+                		<div class="cs_article">
+                        	<div class="left">
+                            	<h2>Suspendisse sed odio ut mi auctor blandit</h2>
+                                <p>Aliquam erat volutpat. Maecenas eget nisl id nisi consequat ultrices et  eu nunc. Praesent ac leo vel dolor rutrum egestas. Aliquam suscipit  vulputate arcu, quis congue ipsum laoreet sed.</p>
+                                    
+                                <div class="button"><a href="#">Read more</a></div>
+                             </div>
+                             <div class="right">
+                             	<a href="http://www.mycodes.net/" target="_parent">
+                             	<img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slide02.jpg" alt="Template 1" /></a>
+                             </div>
                         
-                    	<div class="cs_article">                           	
-                        	<div class="left">
-                            	<h2>Spirit v1.0.0 is released.</h2>
-                                <p><b>Spirit CMS</b> is a simple but powerful CMS with full features, and it's easy to extend to meet variable needs, now it's aviable for download.</p>
-                                    
-                                <div class="button"><a href="#">Download</a></div>
-                            </div>
-                            <div class="right">
-                               <a href="http://www.mycodes.net/" target="_parent"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slide02.jpg" alt="Template 1"></a>
-							</div>                                                                
                         </div><!-- End cs_article -->
                             
-                        <div class="cs_article">
+						<div class="cs_article">
                         	<div class="left">
-                            	<h2>Suspendisse sed odio ut mi auctor blandit</h2>
-                                <p>Integer sed nisi sapien, ut gravida mauris. Nam et tellus libero. Cras purus libero, dapibus nec rutrum in, dapibus nec risus. Ut interdum mi sit amet magna feugiat auctor. </p>                                    
-                             	<div class="button"><a href="#">Read more</a></div>
-							</div>
-                            <div class="right">
-                                <a href="#" target="_parent"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slide01.jpg" alt="Template 2"></a>
-                            </div>
-                         </div><!-- End cs_article -->
-                            
-                         <div class="cs_article">
-                         	<div class="left">
-                            	<h2>Suspendisse sed odio ut mi auctor blandit</h2>
-                                <p>Integer sed nisi sapien, ut gravida mauris. Nam et tellus libero. Cras purus libero, dapibus nec rutrum in, dapibus nec risus. Ut interdum mi sit amet magna feugiat auctor. </p>
-                                <div class="button"><a href="#">Read more</a></div>
-                            </div>
-                            <div class="right">
-                            	<a href="#" target="_parent"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slide03.jpg" alt="Template 3"></a>
-                            </div>
-                         </div><!-- End cs_article -->
-                            
-                         <div class="cs_article">
-                         	<div class="left">
                             	<h2>Suspendisse sed odio ut mi auctor blandit</h2>
                                 <p>Integer sed nisi sapien, ut gravida mauris. Nam et tellus libero. Cras purus libero, dapibus nec rutrum in, dapibus nec risus. Ut interdum mi sit amet magna feugiat auctor. </p>
                                     
-                                <div class="button"><a href="#">Read more</a></div>
-                            </div>
+                            	<div class="button"><a href="#">Read more</a></div>
+                        	</div>
                             <div class="right">
-                            	<a href="#" target="_parent"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slide04.jpg" alt="Template 4"></a>
+                            	<a href="#" target="_parent"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slide01.jpg" alt="Template 2" /></a>
                             </div>
-                        </div><!-- End cs_article -->
+                            </div><!-- End cs_article -->
+                            
+                            <div class="cs_article">
+                                <div class="left">
+                                    <h2>Suspendisse sed odio ut mi auctor blandit</h2>
+                                    <p>Integer sed nisi sapien, ut gravida mauris. Nam et tellus libero. Cras purus libero, dapibus nec rutrum in, dapibus nec risus. Ut interdum mi sit amet magna feugiat auctor. </p>
+                                    
+                                    <div class="button"><a href="#">Read more</a></div>
+                               	</div>
+                            <div class="right">
+                                <a href="#" target="_parent"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slide03.jpg" alt="Template 3" /></a>
+                            </div>
+                            </div><!-- End cs_article -->
+                            
+                            <div class="cs_article">
+                                <div class="left">
+                                    <h2>Suspendisse sed odio ut mi auctor blandit</h2>
+                                    <p>Integer sed nisi sapien, ut gravida mauris. Nam et tellus libero. Cras purus libero, dapibus nec rutrum in, dapibus nec risus. Ut interdum mi sit amet magna feugiat auctor. </p>
+                                    
+                                    <div class="button"><a href="#">Read more</a></div>
+                               	</div>
+                            <div class="right">
+                                <a href="#" target="_parent"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slide04.jpg" alt="Template 4" /></a>
+                            </div>
+                            </div><!-- End cs_article -->
                       
-                    </div><!-- End cs_slider -->
-                </div><!-- End cs_wrapper -->
-                <a href="#" class="cs_rightBtn" style="display: block;">
-                <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/cs_rightImg.png" style="padding: 0px;"></a>
-			</div><!-- End contentslider -->
+                        </div><!-- End cs_slider -->
+                    </div><!-- End cs_wrapper -->
+                </div><!-- End contentslider -->   
         </div>
-	</div>
-		
-	<div id="content_wrapper_outer">
-	    <?php echo $content; ?>    
-	    <div class="clear"></div>   
-	</div> <!-- content_wrapper_outer -->
-	
-	<div id="footer">
-		<div class="wrap clear">
-			<div class="act">
-				Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-				All Rights Reserved.<br/>
-				<?php echo Yii::powered(); ?>
-			</div>
+	</div> <!-- header_wrapper -->
+
+	<?php echo $content; ?>    
+
+	<div id="footer_wrapper">
+		<div id="footer">
+			Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+			All Rights Reserved.<br/>
+			<?php echo Yii::powered(); ?>
 		</div>
 	</div><!-- footer -->
     
 	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-1.3.1.min.js"></script>
+	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.easing.1.3.js"></script>
+	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.ennui.contentslider.js"></script>
+	
+	<?php 
+		$leftBtn = Yii::app()->theme->baseUrl."/images/cs_leftImg.png";
+		$rightBtn = Yii::app()->theme->baseUrl."/images/cs_rightImg.png";
+	
+		echo "
+			<script>
+			$(function() {
+				$('#one').ContentSlider({
+					leftBtn : '$leftBtn',
+					rightBtn : '$rightBtn',
+					width : '920px',
+					height : '200px',
+					speed : 800,
+					easing : 'easeInOutBack'
+				});
+			});
+			</script>"
+	?>
+	
 
 </body>
 </html>
