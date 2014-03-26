@@ -14,8 +14,6 @@
 
     <div class="row-fluid">
   
-	<?php require '_side.php';?>
-	
     <!-- The news area -->
     <div class="span9">
 	  

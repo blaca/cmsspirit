@@ -74,13 +74,14 @@
                 	
                 		<div class="cs_article">
                         	<div class="left">
-                            	<h2>Suspendisse sed odio ut mi auctor blandit</h2>
-                                <p>Aliquam erat volutpat. Maecenas eget nisl id nisi consequat ultrices et  eu nunc. Praesent ac leo vel dolor rutrum egestas. Aliquam suscipit  vulputate arcu, quis congue ipsum laoreet sed.</p>
+                            	<h2>Spirit v1.0.0 is released.</h2>
+                                
+                                <p>Spirit CMS is a simple but powerful CMS with full features, and it's easy to extend to meet variable needs, now it's aviable for download.</p>
                                     
-                                <div class="button"><a href="#">Read more</a></div>
+                                <div class="button"><a href="https://github.com/GeorgeMeng">Download</a></div>
                              </div>
                              <div class="right">
-                             	<a href="http://www.mycodes.net/" target="_parent">
+                             	<a href="#" target="_parent">
                              	<img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slide02.jpg" alt="Template 1" /></a>
                              </div>
                         
@@ -148,7 +149,7 @@
 		$rightBtn = Yii::app()->theme->baseUrl."/images/cs_rightImg.png";
 	
 		echo "
-			<script>
+		<script>
 			$(function() {
 				$('#one').ContentSlider({
 					leftBtn : '$leftBtn',
@@ -159,9 +160,7 @@
 					easing : 'easeInOutBack'
 				});
 			});
-			</script>"
+		</script>"
 	?>
-	
-
 </body>
 </html>
