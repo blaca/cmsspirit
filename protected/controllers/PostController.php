@@ -12,7 +12,7 @@ class PostController extends Controller
 	 * the post in each page.
 	 * @var int
 	 */
-	const DEFAULT_PAGE_SIZE = 10;		
+	const DEFAULT_PAGE_SIZE = 5;		
 	/**
 	 * @var array Post. list the recent post.
 	 */
@@ -31,7 +31,7 @@ class PostController extends Controller
 		$post = new Post();
 		$criteria=new CDbCriteria;
 		$criteria->order = "id desc";
-		$criteria->limit = 5;
+		$criteria->limit = self::DEFAULT_PAGE_SIZE;
 		$post = Post::model()->findAll($criteria);
 		
 		$this->recentPost = $post;
@@ -41,7 +41,7 @@ class PostController extends Controller
 		$criteria = new CDbCriteria;
 		$criteria->condition = " DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(create_time)";
 		$criteria->order = " view_count desc";
-		$criteria->limit = 5;
+		$criteria->limit = self::DEFAULT_PAGE_SIZE;
 		$popular = Post::model()->findAll($criteria);
 		
 		$this->mostPopular = $popular;

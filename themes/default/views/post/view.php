@@ -12,8 +12,6 @@
 	</ul>
 
   <div class="row-fluid">
-    <?php require '_side.php';?>
-    
     <!-- The Show area -->
     <div class="span9">
 	  

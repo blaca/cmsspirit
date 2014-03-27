@@ -299,8 +299,8 @@ cite span { color: #000; }
 
 .post_section {
 	clear: both;
-	padding-bottom: 30px;
-	margin-bottom: 30px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
 	border-bottom: 1px solid #CCC;
 	background: url(../images/divider.jpg) bottom repeat-x;	
 }
@@ -313,11 +313,10 @@ cite span { color: #000; }
 
 .post_section .post_content {
 	clear: both;
-	margin: 10px 0;
 }
 .post_content .left {
 	float: left; 
-	width: 130px;
+	width: 430px;
 }
 
 .post_content .left images {
